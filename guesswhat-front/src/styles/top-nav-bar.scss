@@ -1,0 +1,27 @@
+.top--nav--bar{
+  width: 100vw;
+  height: 90px;
+  margin-top: 0;
+  background-color: #0c4767;
+
+}
+ul{
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  height: 90px;
+
+}
+li{
+  list-style: none;
+  padding-right: 60px;
+
+  
+}
+a{
+  text-decoration: none;
+  color: white;
+
+}
