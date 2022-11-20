@@ -11,15 +11,24 @@
 
 }
 
-button{
-  width: 100px;
+.btn-link{
+  width: 70%;
   height: 40px;
   border-radius: 5px;
   border: 1px solid transparent;
   color: white;
   background-color: #FA7921;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   // change the thickness
 
 
 
 }
+
+.register-container input:nth-child(6){
+  margin-bottom: 30px;
+  
+}
+

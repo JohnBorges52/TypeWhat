@@ -16,7 +16,7 @@ export default function Login() {
 
     <div className='login-btn-container'>
       
-    <button className='login-btn'>Login</button>
+    <button  className='btn-link' href="/login"> LOGIN </button>
     </div>
 
     

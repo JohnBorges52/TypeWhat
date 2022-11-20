@@ -1,5 +1,6 @@
 .login-container{
-  width: 35%;
+  width: 70%;
+  max-width: 300px ;
   height: 350px;
   border: 1px solid #FA7921;
   border-radius: 8px;
@@ -16,7 +17,6 @@
   margin: 15px auto 15px auto;
   width: 90%;
   text-align: center;
- 
 
 }
 
@@ -34,10 +34,7 @@
   justify-content: center;
 }
 
-.login-btn{
-  margin-top: 30px;
-  width: 70%;
-  text-transform: uppercase;
-
-
+.login-container input:nth-child(4){
+  margin-bottom: 30px;
 }
+

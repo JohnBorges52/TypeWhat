@@ -6,11 +6,14 @@ export default function MainPage() {
   return (
     <div className='mainpage--container'>
 
-      <button className='login-btn'> LOGIN </button>
+    
+      <a  className='btn-link' href="/login"> LOGIN </a>
+      <a  className='btn-link' href="/register"> REGISTER </a>
 
-      <button className='register--btn'>REGISTER</button>
 
-  
+      
+
+
 
     </div>
 
