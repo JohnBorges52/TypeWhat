@@ -47,8 +47,8 @@
 
 }
 
-.register--input:focus ~ .register--label,
-.register--input:not(:placeholder-shown).register--input:not(:focus) ~.register--label
+.form--input:focus ~ .form--label,
+.form--input:not(:placeholder-shown).form--input:not(:focus) ~.form--label
 {
 
   top: -1px;

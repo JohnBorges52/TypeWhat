@@ -43,20 +43,20 @@ export default function Register() {
       
      <div className='input-label-container'>
 
-    <input className='register--input' type="email" placeholder=" " name="email" required ref={emailRef} />
-    <label className="register--label" >E-mail</label>
+    <input className='form--input' type="email" placeholder=" " name="email" required ref={emailRef} />
+    <label className="form--label" >E-mail</label>
      </div>
 
      <div className='input-label-container'>
 
-    <input className='register--input' type="email" placeholder=" " name="email" required  ref={passwordRef} />
-    <label className="register--label" >Password</label>
+    <input className='form--input' type="password" placeholder=" " name="password" required  ref={passwordRef} />
+    <label className="form--label" >Password</label>
     </div>
 
     <div className='input-label-container'>
 
-    <input className='register--input' type="email" placeholder=" " name="email" required ref={passwordConfirmationRef} />
-    <label className="register--label" >Confirmation</label>
+    <input className='form--input' type="password" placeholder=" " name="password" required ref={passwordConfirmationRef} />
+    <label className="form--label" >Confirmation</label>
     </div>
 
     <div className='register-btn-container'>
