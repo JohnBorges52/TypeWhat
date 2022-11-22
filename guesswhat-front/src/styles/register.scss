@@ -9,8 +9,11 @@
   justify-content: center;
   margin: 150px auto 0;
   align-items: center;
+  transition: 1000ms;
   
 }
+
+
 
 .input-label-container{
   width: 70%;
@@ -66,11 +69,12 @@
 
 
 
-.register--input:hover{
-  border: 1px solid orange;
+.form--input:hover{
+  box-shadow: 0 0 5px white;
+
 }
 
-.register--input:focus{
+.form--input:focus{
   border-color: #FA7921;
 
 }
@@ -89,3 +93,49 @@
 
 
 }
+
+.btn-link{
+  margin-top: 20px;
+  cursor: pointer;
+  width: 55%;
+  transition: 0.35s ;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  position:relative;
+  z-index: 1;
+  background-color: transparent;
+  border: 1.5px solid  white;
+ 
+  
+}
+
+.btn-link::before{
+  content: "";
+  position: absolute;
+  top:0 ;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #FA7921;
+  border-radius: 3.5px;
+  transform: scaleX(0);
+  transition: transform 300ms ease-in-out;
+  transform-origin: left;
+  
+}
+
+.btn-link:hover::before {
+  transform: scaleX(1);
+  box-shadow: 0 0 10px white;
+  
+
+}
+
+
+
+
+
+
+
+

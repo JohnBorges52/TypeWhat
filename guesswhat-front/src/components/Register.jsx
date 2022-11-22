@@ -61,7 +61,7 @@ export default function Register() {
 
     <div className='register-btn-container'>
       
-    <button className='btn-link' href="/register" onClick={(e)=>{onSubmit(e)}}> REGISTER </button>
+    <button className='btn-link' href="/register" onClick={(e)=>{onSubmit(e)}}><i></i> REGISTER </button>
     </div>
 
     
