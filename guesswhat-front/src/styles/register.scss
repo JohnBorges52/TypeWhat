@@ -132,6 +132,10 @@
 }
 
 .btn-link:hover::after{
+  animation: rotate 1.5s linear infinite;
+  
+  
+  
   transform: rotate(220deg);
 }
 
