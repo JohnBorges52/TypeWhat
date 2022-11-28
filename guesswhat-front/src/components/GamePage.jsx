@@ -1,18 +1,23 @@
 import React from 'react'
 import'../styles/gamepage.scss'
 import axios from 'axios'
+import { useState } from 'react'
 
 
 
 
 export default function GamePage() {
 
-  
+    const[currentWord, setCurrentWord] = useState("");
+    const[userWord, setUserWord] = useState("");
 
 
+    const randomWord = () => {
 
-  const randomWord = (e) => {
-    e.preventDefault(); 
+     
+
+
+    // e.preventDefault(); 
     const url = "https://api.api-ninjas.com/v1/randomword"
     axios.get(url, {
       headers: { 'X-Api-Key': 'Z32yDdS8nvmr8jzg+ypYTQ==zfzLwMaoKnftCKOB'}
@@ -20,8 +25,19 @@ export default function GamePage() {
     })
     .then((res)=>{
       console.log(res.data.word)
+      setCurrentWord(res.data.word)
     })
   }
+
+  const randomWordTime = () => {
+    
+    setTimeout(()=>{
+      randomWord();
+
+    }, 5000)
+  }
+
+
 
 
 
@@ -29,14 +45,16 @@ export default function GamePage() {
     <div className='gamepage-container'>
 
     <div className='randomwords-container'>
-      <button onClick={(e)=>{randomWord(e)}}>TEST</button>
+      
 
-      here is gonna be random words
+        <span>{currentWord}</span>
+      
     </div>
 
     <div className='typewords-container'> 
 
-        <input className='input-words' type="text" />
+        <input className='input-words' type="text"  />
+
         
     </div>
 
