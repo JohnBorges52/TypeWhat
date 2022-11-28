@@ -7,6 +7,7 @@ import TopNavBar from "./components/TopNavBar";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import HomePage from "./components/HomePage";
+import GamePage from "./components/GamePage";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/home" element={<HomePage />} />
+        <Route path="/play" element={<GamePage />} />
 
       </Routes>
     </div >

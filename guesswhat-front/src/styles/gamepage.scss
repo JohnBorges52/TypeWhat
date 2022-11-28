@@ -1,0 +1,51 @@
+.gamepage-container{
+  color: white;
+  border: 1px solid red;
+  width: 100%;
+  height: calc(100% - 92px);
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+}
+
+.randomwords-container{
+  border: 1px solid white;
+  height: 500px;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 2em;
+  
+
+}
+
+.typewords-container{
+  border: 1px solid white;
+  height: 100px;
+  margin: 0 auto;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  
+
+
+
+}
+.input-words{
+  
+  border: 2px solid white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: transparent;
+  overflow: hidden;
+  outline: none;
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  text-transform: uppercase;
+
+
+}
