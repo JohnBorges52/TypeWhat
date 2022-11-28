@@ -1,5 +1,5 @@
 .gamepage-container{
-  color: white;
+
   border: 1px solid red;
   width: 100%;
   height: calc(100% - 92px);
@@ -28,13 +28,29 @@
   justify-content: center;
   align-items: center;
 
-  
-
-
-
 }
+
+.currentWord{
+  color:white;
+  border: 1px solid red;
+  width: fit-content;
+  height: 10%;
+  animation: currentWordY 1s linear infinite alternate,currentWordX 1s linear infinite alternate;
+}
+
+
+@keyframes currentWordY {
+  100% {
+    transform: translateY(calc(1500px - 50px));
+  }
+}
+@keyframes currentWordX {
+  100% {
+    transform: translateX(calc(90vw - 70px));
+  }
+}
+
 .input-words{
-  
   border: 2px solid white;
   border-top: none;
   border-left: none;
@@ -45,7 +61,17 @@
   color: white;
   font-size: 1.5em;
   text-align: center;
-  text-transform: uppercase;
+  // text-transform: uppercase;
 
 
+}
+.startgame-btn{
+  width: 10%;
+  margin: 0 auto;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: rgb(255, 38, 0);
+  color: white;
+  cursor: pointer;
 }
