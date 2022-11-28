@@ -53,7 +53,7 @@ export default function GamePage() {
 
     <div className='typewords-container'> 
 
-        <input className='input-words' type="text"  />
+        <input className='input-words' type="text" onChange={(e)=>{setUserWord(e.target.value); console.log(e.target.value)}}  />
 
         
     </div>
