@@ -3,6 +3,7 @@ import'../styles/gamepage.scss'
 import axios from 'axios'
 import { useState, useRef } from 'react'
 import { useEffect } from 'react';
+import $ from 'jquery';
 
 
 
@@ -11,8 +12,30 @@ export default function GamePage() {
 
     const[currentWord, setCurrentWord] = useState("");
     const[userWord, setUserWord] = useState("");
-    const[counting, setCounting] = useState(false)
+
+
+    function makeNewPosition(){
     
+      // Get viewport dimensions (remove the dimension of the div)
+      var h = $('.container').height() - 50;
+      var w = $('.container').width() - 50;
+      
+      var nh = Math.floor(Math.random() * h);
+      var nw = Math.floor(Math.random() * w);
+      
+      return [nh,nw];    
+      
+  }
+  
+  function animateDiv(myclass){
+      var newq = makeNewPosition();
+      $(myclass).animate({ top: newq[0], left: newq[1] }, 700,   function(){
+        animateDiv(myclass);        
+      });
+      
+  };
+
+
     useEffect(()=> {
 
       const userWordInput = document.getElementById('input-word');
@@ -40,14 +63,7 @@ export default function GamePage() {
      
     })
   }
-    // const generateRandomWordWithTimer = () => {
 
-    //   setInterval(()=>{
-    //     setCounting(true);
-    //     generateRandomWord()
-        
-    //   },5000)
-    // }
 
 
   return (
@@ -59,6 +75,7 @@ export default function GamePage() {
       
     </div>
     <button className='startgame-btn' onClick={()=>{generateRandomWord() }}> START </button>
+    
 
     <div className='typewords-container'> 
 
