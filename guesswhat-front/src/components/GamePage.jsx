@@ -13,27 +13,56 @@ export default function GamePage() {
     const[currentWord, setCurrentWord] = useState("");
     const[userWord, setUserWord] = useState("");
 
+    useEffect(()=>{
+      animateDiv()
+    },[])
 
-    function makeNewPosition(){
+
+   const makeNewPosition = () => {
+
+    let wordHeight = $(".currentWord").height();
+    let wordWidth = $(".currentWord").width();
+      
+    let boxWidth = $(".randomwords-container").width() - wordWidth;
+     
+    let min = $(".randomwords-container").offset().top
     
-      // Get viewport dimensions (remove the dimension of the div)
-      var h = $('.container').height() - 50;
-      var w = $('.container').width() - 50;
-      
-      var nh = Math.floor(Math.random() * h);
-      var nw = Math.floor(Math.random() * w);
-      
-      return [nh,nw];    
-      
+    
+    let max = $(".startgame-btn").offset().top - (wordHeight +(wordHeight/2) );
+
+    let maxHeigh = Math.floor(Math.random() * (max-min));
+    let maxWidth = Math.floor(Math.random() * boxWidth);
+
+    return [maxHeigh,maxWidth]
+   }
+   
+   
+   function animateDiv(){
+    let newq = makeNewPosition();
+    let oldq = $('.currentWord').offset();
+    let speed = calcSpeed([oldq.top, oldq.left], newq);
+    $('.currentWord').animate({ top: newq[0], left: newq[1] }, speed, function(){
+      animateDiv();        
+    });
+    
+   };
+
+   function calcSpeed(prev, next) {
+    
+    var x = Math.abs(prev[1] - next[1]);
+    var y = Math.abs(prev[0] - next[0]);
+    
+    var greatest = x > y ? x : y;
+    
+    var speedModifier = 0.5;
+
+    var speed = Math.ceil(greatest/speedModifier);
+
+    return speed;
   }
-  
-  function animateDiv(myclass){
-      var newq = makeNewPosition();
-      $(myclass).animate({ top: newq[0], left: newq[1] }, 700,   function(){
-        animateDiv(myclass);        
-      });
-      
-  };
+   
+
+
 
 
     useEffect(()=> {
@@ -75,6 +104,7 @@ export default function GamePage() {
       
     </div>
     <button className='startgame-btn' onClick={()=>{generateRandomWord() }}> START </button>
+    <button className='startgame-btn' onClick={()=>{makeNewPosition() }}> test </button>
     
 
     <div className='typewords-container'> 
