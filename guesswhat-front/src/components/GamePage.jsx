@@ -8,10 +8,19 @@ import $ from 'jquery';
 
 
 
+
 export default function GamePage() {
 
     const[currentWord, setCurrentWord] = useState("");
     const[userWord, setUserWord] = useState("");
+    const [playing, setPlaying] = useState(false)
+
+    const [mileSecond, setMileSecond] = useState(999)
+    const [second, setSecond] = useState(9)
+    const [minute, setMinute] = useState(1)
+
+    const [runningTimer, setRunningTimer] = useState(false)
+
 
     useEffect(()=>{
       animateDiv()
@@ -28,7 +37,7 @@ export default function GamePage() {
     let min = $(".randomwords-container").offset().top
     
     
-    let max = $(".startgame-btn").offset().top - (wordHeight +(wordHeight/2) );
+    let max = $(".bottom-limit").offset().top - (wordHeight +(wordHeight/2) );
 
     let maxHeigh = Math.floor(Math.random() * (max-min));
     let maxWidth = Math.floor(Math.random() * boxWidth);
@@ -62,9 +71,6 @@ export default function GamePage() {
   }
    
 
-
-
-
     useEffect(()=> {
 
       const userWordInput = document.getElementById('input-word');
@@ -77,6 +83,7 @@ export default function GamePage() {
       }
 
     },[userWord])
+
 
     const inputRef = useRef(null)
 
@@ -93,6 +100,36 @@ export default function GamePage() {
     })
   }
 
+    if(runningTimer) {
+
+      setTimeout(()=>{
+        if(playing && mileSecond > 100){
+          setMileSecond(mileSecond-1)
+        }
+        if(playing && mileSecond === 100){
+          setMileSecond(1000)
+        }
+        
+      }, 0.9)
+      
+      setTimeout(()=>{
+        if(playing && mileSecond > 0) {
+          setSecond(second-1)
+        }
+        if(playing && minute > 0 && second === 0){
+          setMinute(minute-1)
+          setSecond(5)
+          
+        }
+        if(playing && minute === 0 && second === 0 ){
+          setSecond(0)
+          setMileSecond(0)
+          setMinute(0)
+          
+        }
+      },1000)
+    }
+
 
 
   return (
@@ -103,8 +140,18 @@ export default function GamePage() {
       <div className='currentWord'> {currentWord}</div>
       
     </div>
-    <button className='startgame-btn' onClick={()=>{generateRandomWord() }}> START </button>
-    <button className='startgame-btn' onClick={()=>{makeNewPosition() }}> test </button>
+    <div className='bottom-limit'></div>
+
+    {!playing ? 
+    <button className='startgame-btn' onClick={()=>{generateRandomWord(); setPlaying(true); setRunningTimer(true) }}> START </button>
+    :
+    <span className='timer'>{minute} : {second} : {mileSecond}</span>
+    
+    }
+
+
+
+
     
 
     <div className='typewords-container'> 
