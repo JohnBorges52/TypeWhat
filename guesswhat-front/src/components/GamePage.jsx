@@ -97,7 +97,8 @@ export default function GamePage() {
       headers: { 'X-Api-Key': 'Z32yDdS8nvmr8jzg+ypYTQ==zfzLwMaoKnftCKOB'}
     })
     .then((res)=>{
-      setCurrentWord(res.data.word)
+      setCurrentWord(res.data.word);
+      inputRef.current.focus();
      
     })
   }
