@@ -79,7 +79,8 @@ export default function GamePage() {
       if(currentWord !== "" && userWord !== "" && currentWord === userWord){
         userWordInput.value = "";
         console.log("ACERTOU");
-        setCounter(counter+1)
+        setCounter(counter+1);
+        animateCounter();
         inputRef.current.focus();
         generateRandomWord();
       }
@@ -134,6 +135,21 @@ export default function GamePage() {
       },1000)
     }
 
+    const formatTime = (time) => {
+      return String(time).padStart(2, '0')
+    }
+
+    const animateCounter = () => {
+      const counterElement = document.getElementById('counter-id');
+      counterElement.classList.add("counter-animation");
+      
+      setTimeout(()=>{
+      counterElement.classList.remove("counter-animation");
+
+      },1000)
+
+    }
+
 
   return (
     <div className='gamepage-container'>
@@ -146,11 +162,11 @@ export default function GamePage() {
     <div className='bottom-limit'></div>
 
     {!playing ? 
-    <button className='startgame-btn' onClick={()=>{generateRandomWord(); setPlaying(true); setRunningTimer(true); setMileSecond(999); setSecond(8); setMinute(1); setCounter(0) }}> START </button>
+    <button className='startgame-btn' onClick={()=>{generateRandomWord(); setPlaying(true); setRunningTimer(true); setMileSecond(999); setSecond(888); setMinute(1); setCounter(0) }}> START </button>
     :
     <>
-    <span className='timer'>{minute} : {second} : {mileSecond}</span>
-    <span className='counter'>{counter}</span>
+    <span className='timer'>{formatTime(minute)} : {formatTime(second)} : {mileSecond}</span>
+    <span className='counter' id='counter-id'>{counter}</span>
     </>
     
     }

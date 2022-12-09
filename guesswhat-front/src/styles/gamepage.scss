@@ -52,9 +52,20 @@
 .counter{
   color: white;
   font-size: 2em;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 45px;
+  background-color: rgba(255, 192, 203, 0.096);
   display: flex;
   justify-content: center;
-  align-items: center;
+  
+  
+}
+
+.counter-animation{
+  animation: pulse .5s normal;
 }
 
 
@@ -68,6 +79,11 @@
   100% {
     transform: translateX(calc(90vw - 70px));
   }
+}
+
+@keyframes pulse {
+  0%{box-shadow: 0 0 0 0 rgb(231, 84, 16);}
+  100%{box-shadow: 0 0 0 20px rgba(231, 84, 16, 0.027);}
 }
 
 .input-words{
