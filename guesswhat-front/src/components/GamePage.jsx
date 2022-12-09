@@ -14,6 +14,7 @@ export default function GamePage() {
     const[currentWord, setCurrentWord] = useState("");
     const[userWord, setUserWord] = useState("");
     const [playing, setPlaying] = useState(false)
+    const [counter, setCounter] = useState(0)
 
     const [mileSecond, setMileSecond] = useState(999)
     const [second, setSecond] = useState(9)
@@ -78,6 +79,7 @@ export default function GamePage() {
       if(currentWord !== "" && userWord !== "" && currentWord === userWord){
         userWordInput.value = "";
         console.log("ACERTOU");
+        setCounter(counter+1)
         inputRef.current.focus();
         generateRandomWord();
       }
@@ -145,7 +147,10 @@ export default function GamePage() {
     {!playing ? 
     <button className='startgame-btn' onClick={()=>{generateRandomWord(); setPlaying(true); setRunningTimer(true) }}> START </button>
     :
+    <>
     <span className='timer'>{minute} : {second} : {mileSecond}</span>
+    <span className='counter'>{counter}</span>
+    </>
     
     }
 
