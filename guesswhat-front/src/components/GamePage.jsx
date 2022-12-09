@@ -128,11 +128,11 @@ export default function GamePage() {
           setSecond(0)
           setMileSecond(0)
           setMinute(0)
+          setPlaying(false)
           
         }
       },1000)
     }
-
 
 
   return (
@@ -146,7 +146,7 @@ export default function GamePage() {
     <div className='bottom-limit'></div>
 
     {!playing ? 
-    <button className='startgame-btn' onClick={()=>{generateRandomWord(); setPlaying(true); setRunningTimer(true) }}> START </button>
+    <button className='startgame-btn' onClick={()=>{generateRandomWord(); setPlaying(true); setRunningTimer(true); setMileSecond(999); setSecond(8); setMinute(1); setCounter(0) }}> START </button>
     :
     <>
     <span className='timer'>{minute} : {second} : {mileSecond}</span>
