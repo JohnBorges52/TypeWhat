@@ -1,23 +1,36 @@
 .mainpage--container{
-  margin: 25vh auto;
-  width: 300px;
-  height: 300px;
+  margin: 15vh auto;
+  width: 70%;
+  height: 600px;
 
   border: 1px solid white;
   border-radius: 5px;
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
-  align-items: center;
+  
   background-color: #026a9bf6;
   
 
 }
 .mainpage--container:hover{
-  background-color: #065c85;
+  background-color: #0f8bc5;
 
 
 }
+.title-container{
+  width: 700px;
+  border: red 1px solid;
+}
+
+
+.title-mainpage{
+  color: white;
+  font-size: 3em;
+  text-align: center;
+}
+.subtitle-mainpage{
+  color: white;
+}
+
+
 
 
 .btn-link{
