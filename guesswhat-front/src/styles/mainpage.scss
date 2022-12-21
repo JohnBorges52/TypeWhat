@@ -80,28 +80,27 @@
     }
 
   }
-
-
 }
-.content-container{
+.content-container {
   width: calc(100% - 40px);
   height: 85%;
-  border: solid red 2px;
   padding-left: 40px;
   display: flex;
   align-items: center;
 
   .content-container-left{
+    border: solid red 2px;
+
     width: 40%;
     height: 80%;
-    border: 1px solid red;
+    // border: 1px solid red;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     
     .content-container-left-text{
 
-      border: 1px solid black;
+      // border: 1px solid black;
       
       h2{
         font-size: 3.5em;
@@ -123,40 +122,104 @@
 
     }
 
-    .content-container-left-subtext{
-      border: 1px solid green;
-      width: 90%;
-      height: 80px;
-      
-      h5{
-        color: white;
-        margin: 0;
-        font-size: 1em;
-      }
-
-    }
-    .content-container-left-subtext{
+    .content-container-left-subtext{   
       width: 100%;
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: 40px;
+      // border: 1px solid green; 
+    
+      h5 { 
+        color: white;
+        margin: 0;
+        font-size: 1em;
+      }
       
+    }
+    .content-container-left-subtext-links{
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      // border: 1px solid red;
+
+      padding-left: 20px;
+      width: calc(100% - 20px);
       .a-link-login{
-        border: 1px solid white;
         width: 150px;
-        height: 35px;
+        height: 34px;
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 20px;
 
       }
+
+
+      .btn-login{
+        background-image: linear-gradient(to right, rgb(51, 31, 105), rgb(118, 77, 230)) ;
+        box-shadow: rgba(0, 0, 0, 0.56) 10px 7px 15px 1px;
+        color: rgb(241, 235, 235);
+      }
+      .btn-register{
+        border: 2px solid rgb(111, 111, 211);
+        color: rgb(241, 235, 235);
+
+      }
     }
   }
+  .content-container-right{
+    width: 60%;
+    height: 90%;
+    border: 2px solid green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    overflow:hidden;
+    
+    .triangle{
+      position: relative;
+      width: 300px;
+      height: 300px;
+      background-color: orange;
+      border-radius: 45%;
+      border-top-right-radius: 10%;
+      border-bottom-right-radius: 40%;
+      border-bottom-left-radius: 10%;
+      border-top-left-radius: 40%;
+      transform: rotate(-10deg);
+      background-image: url(../../public/asdasdasd.jpg);
+      background-repeat: none;
+      background-position: center;
+      background-size: contain;
+      // overflow: hidden;
+
+      
+    }
+    .triangle::after {
+      content: "";
+      width: 320px;
+      height: 320px;
+      background-color: orange;
+      border-radius: 45%;
+      border-top-right-radius: 10%;
+      border-bottom-right-radius: 40%;
+      border-bottom-left-radius: 10%;
+      border-top-left-radius: 40%;
+      transform: rotate(10deg);
+      position: absolute;
+      z-index: -1;
+      
+
+
+    }
+
+
+    
+    
+  }
 }
-
-
 
 
 

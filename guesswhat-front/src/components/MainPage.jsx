@@ -49,15 +49,26 @@ export default function MainPage() {
             <h3 > is better </h3>
             </div>
           <div className='content-container-left-subtext'>
-            <h5 > Test yor habilities to see how many words you can type in one minute and climb your way to the top of players. You will need to test your typing habilities as well as your vision in order to see the words moving.</h5>
+            <h5> Test yor habilities to see how many words you can type in one minute and climb your way to the top of players. You will need to test your typing habilities as well as your vision in order to see the words moving.</h5>
           </div>
-          <div className='content-container-left-subtext'>
-            <a  className='a-link-login' href="/login"> LOGIN </a>
-            <a  className='a-link-login' href="/register"> REGISTER </a>
+          <div className='content-container-left-subtext-links'>
+            <a  className='a-link-login btn-login' href="/login"> Login now</a>
+            <a  className='a-link-login btn-register' href="/register"> Register here </a>
           </div>
         
         </div>
+
+        <div className='content-container-right'>
+          <div className='triangle'>
+
+          </div>
+
+
+
+        </div>
+
       </div>
+
 
 
 
