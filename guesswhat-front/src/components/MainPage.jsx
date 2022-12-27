@@ -45,7 +45,7 @@ export default function MainPage() {
 
           <div className='content-container-left-text'>
             <h4> Where</h4>
-            <h2 > Typing Fast</h2>
+            <span > Typing Fast</span>
             <h3 > is better </h3>
             </div>
           <div className='content-container-left-subtext'>
