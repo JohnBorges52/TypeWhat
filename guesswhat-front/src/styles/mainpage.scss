@@ -56,20 +56,15 @@
   margin-top: 50px;
 
   .content-container-left{
-    // border: solid red 2px;
-
     width: 40%;
     height: 80%;
     min-height: 408px ;
-    // border: 1px solid red;
     display: flex;
     flex-direction: column;
     gap: 20px;
     
     .content-container-left-text{
 
-      // border: 1px solid black;
-      
       span{
         margin: 0;
         color: rgb(37, 79, 126);
@@ -119,7 +114,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 1vw;
+      gap: 2.5vw;
       margin-top: 15px;
       margin-bottom: 30px;
       
@@ -131,6 +126,7 @@
         align-items: center;
         justify-content: center;
         border-radius: 20px;
+        
 
       }
 
@@ -151,7 +147,6 @@
   .content-container-right{
     width: 60%;
     height: 90%;
-    border: 2px solid green;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -191,10 +186,10 @@
       transform: rotate(10deg);
       position: absolute;
       z-index: -1;
-      background-image: url(../../public/asdasdasd.jpg);
-      background-repeat: none;
+      background-image: url(../../public/pexels-photo-7533376.jpeg);
+      background-repeat: no-repeat;
       background-position: center;
-      background-size: contain;
+      background-size: cover;
 
       
 
@@ -215,20 +210,33 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-start;
   }
 
   .title-mainpage-topnav{
     
+      width: 30%;
+      display: flex;
+      justify-content: flex-end;
+      line-height: 33px;
 
-    .title-mainpage-topnav-right{
+      .hamburguer{
+        display: flex;
+        justify-content: flex-end;
+       
 
-      border: 1px solid red;
+      }
 
       .normal-Li{
         display: none;
       }
+      .small-Li{
+        font-size: 1.5em;
+        text-align: right;
+        padding-right: 30px ;
+      }
 
-    }
+    
   }
 
   .fa-feather{
@@ -310,27 +318,32 @@
 
     .title-mainpage-topnav-right{
       position: absolute;
-      width: 80%;
-      min-width: 440px;
+      width: 50%;
+      min-width: 400px;
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: flex-end;
       border-radius: 30px;
       border-top-right-radius:  0;
       border-bottom-right-radius:  0;
       background-image: linear-gradient(to right, rgb(240, 151, 240), rgb(111, 111, 211)) ;
       align-items: center;
       height: 60%;
-      gap: 4rem;
+      gap: 4vw;
+      padding-right: 60px;
       
       .normal-Li{
         list-style: none;
         text-transform: uppercase;
         
       }
+      .small-Li{
+        display: none;
+      }
     }
     .hamburguer {
       display: none;
+      color: white;
     }
 
   }

@@ -15,7 +15,6 @@ import Hamburger from 'hamburger-react'
 export default function MainPage() {
 
   const [isOpen, setOpen] = useState(false)
-  const [Hamburguer, setHamburguer] = useState(false)
   return (
 
     <div className='mainpage--container'>
@@ -32,7 +31,8 @@ export default function MainPage() {
         </div>
           <div className='title-mainpage-topnav'>
             <div className='title-mainpage-topnav-right'>
-              <li className='hamburguer'><Hamburger toggled={isOpen} toggle={setOpen} /></li>
+              <li className='hamburguer'><Hamburger toggled={isOpen}  color="#c1fdfa" toggle={setOpen} /></li>
+             
              {isOpen &&
              <>
               <li className='small-Li'><a href="#">Play</a></li>  
