@@ -14,11 +14,11 @@ export default function TopNavBar() {
   return (
     <div className='top--nav--bar'>
       <ul>
+        <li><Hamburger toggled={isOpen} toggle={setOpen} /></li>
         <li><a href="#">LOGO</a></li>
         <li><a href="#">Login</a></li>
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
-        <li><Hamburger toggled={isOpen} toggle={setOpen} /></li>
       </ul>
       
 

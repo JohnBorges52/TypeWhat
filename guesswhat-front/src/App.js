@@ -13,12 +13,7 @@ import './styles/style.scss'
 function App() {
   return (
     <div className="App">
-
-      <TopNavBar />
       <div className='main-container'>
-
-
-
 
         <Routes>
           <Route path="/" element={<MainPage />} />

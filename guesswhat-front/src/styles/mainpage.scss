@@ -4,6 +4,7 @@
   border: 1px solid white;
   border-radius: 5px;
   background-color: #009be2f6;
+  min-height: 80vh;
 }
 
 .mainpage--container:hover{
@@ -36,7 +37,6 @@
 
       .title-mainpage{
         color: white;
-        font-size: 1.5em;
         text-align: center;
         margin: 0;
         padding-right: 10px;
@@ -45,37 +45,7 @@
 
   }
 
-  .title-mainpage-topnav{
-    width: 100%;
-    // border: 2px solid green;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    
-
-    .title-mainpage-topnav-right{
-      width: 50%;
-      min-width: 210px;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      border-radius: 30px;
-      border-top-right-radius:  0;
-      border-bottom-right-radius:  0;
-      background-image: linear-gradient(to right, rgb(240, 151, 240), rgb(111, 111, 211)) ;
-      align-items: center;
-      height: 60%;
-      gap: 4rem;
-      
-      li{
-        list-style: none;
-       
-        text-transform: uppercase;
-
-      }
-    }
-
-  }
+  
 }
 .content-container {
   width: calc(100% - 40px);
@@ -83,6 +53,7 @@
   padding-left: 40px;
   display: flex;
   align-items: center;
+  margin-top: 50px;
 
   .content-container-left{
     // border: solid red 2px;
@@ -124,18 +95,15 @@
 
       }
    
-
     }
 
     .content-container-left-subtext{   
-      width: 90%;
       min-width: 182px;
       max-height: 190px ;
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: 40px;
-      // border: 1px solid green; 
     
       h5 { 
         color: white;
@@ -143,7 +111,6 @@
         font-size: 1em;
         font-family: 'Montserrat', sans-serif;
         font-weight: 300;
-        // font-size: min(max(0.5em, 4vw), 1em); 
 
       }
       
@@ -154,6 +121,7 @@
       align-items: center;
       gap: 1vw;
       margin-top: 15px;
+      margin-bottom: 30px;
       
       .a-link-login{
         width: 150px;
@@ -241,13 +209,36 @@
 
 
 
-.register-container input:nth-child(6){
-  margin-bottom: 30px;
-}
-
-
 @media only screen and (max-width: 800px) {
 
+  .top-bar-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .title-mainpage-topnav{
+    
+
+    .title-mainpage-topnav-right{
+
+      border: 1px solid red;
+
+      .normal-Li{
+        display: none;
+      }
+
+    }
+  }
+
+  .fa-feather{
+    color: white;
+    font-size: 3.9em;
+  }
+  .title-mainpage{
+    font-size: 1.3em;
+
+  }
 
   .content-container{
     flex-wrap: wrap;
@@ -259,7 +250,7 @@
     
       .content-container-left{
         width: 100%;
-
+      
         span {
           font-size: 3.5em;
           text-align: center;
@@ -280,7 +271,7 @@
       justify-content: center;
       flex-direction: column;
       text-align: center;
-      
+    
     }
 
    }
@@ -293,10 +284,84 @@
 
   }
 
+  .content-container-left-subtext {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   
+  }
+  .content-container-left-subtext-links{
+    justify-content: center;
+
+  }
+
 }
+
+
 @media only screen and (min-width: 800px) {
- 
+
+  .title-mainpage-topnav{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    
+
+    .title-mainpage-topnav-right{
+      position: absolute;
+      width: 80%;
+      min-width: 440px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      border-radius: 30px;
+      border-top-right-radius:  0;
+      border-bottom-right-radius:  0;
+      background-image: linear-gradient(to right, rgb(240, 151, 240), rgb(111, 111, 211)) ;
+      align-items: center;
+      height: 60%;
+      gap: 4rem;
+      
+      .normal-Li{
+        list-style: none;
+        text-transform: uppercase;
+        
+      }
+    }
+    .hamburguer {
+      display: none;
+    }
+
+  }
 
 
+  .fa-feather{
+    color: white;
+    font-size: 4em;
+  }
+
+  .title-mainpage{
+    font-size: 1.5em;
+
+  }
+
+  .content-container-left-text{
+    
+    margin-top: 10px;
+  span {
+    font-size: 4.5em;
+    text-align: center;
+    
+  }
+
+  h3{
+    font-size: 3.5em;
+  }
+  h4{
+    font-size: 2.8em;
+
+  }
+  }
 
 }

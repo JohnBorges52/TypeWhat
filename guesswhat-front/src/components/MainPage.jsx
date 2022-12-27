@@ -2,6 +2,10 @@ import React from 'react'
 import'../styles/mainpage.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFeather } from '@fortawesome/free-solid-svg-icons'
+import { useState } from 'react'
+
+import Hamburger from 'hamburger-react'
+
 
 
 
@@ -9,12 +13,10 @@ import { faFeather } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function MainPage() {
+
+  const [isOpen, setOpen] = useState(false)
+  const [Hamburguer, setHamburguer] = useState(false)
   return (
-
-
-
-
-
 
     <div className='mainpage--container'>
 
@@ -22,7 +24,7 @@ export default function MainPage() {
 
         <div className='title-container'>     
         
-          <FontAwesomeIcon icon={faFeather} size="4x" className='fa-feather' />
+          <FontAwesomeIcon icon={faFeather}  className='fa-feather' />
           <div className='h1-title-container'>
             <h1 className='title-mainpage'>Type</h1>
             <h1 className='title-mainpage'>What</h1>
@@ -30,10 +32,26 @@ export default function MainPage() {
         </div>
           <div className='title-mainpage-topnav'>
             <div className='title-mainpage-topnav-right'>
-              <li><a href="#">Play</a></li>  
-              <li><a href="#">Ranking</a></li>  
-              <li><a href="#">About</a></li>  
-              <li><a href="#">another</a></li>  
+              <li className='hamburguer'><Hamburger toggled={isOpen} toggle={setOpen} /></li>
+             {isOpen &&
+             <>
+              <li className='small-Li'><a href="#">Play</a></li>  
+              <li className='small-Li'><a href="#">Ranking</a></li>  
+              <li className='small-Li'><a href="#">About</a></li>  
+              <li className='small-Li'><a href="#">another</a></li>     
+             </> 
+            }         
+              
+
+
+
+
+
+
+              <li className='normal-Li'><a href="#">Play</a></li>  
+              <li className='normal-Li'><a href="#">Ranking</a></li>  
+              <li className='normal-Li'><a href="#">About</a></li>  
+              <li className='normal-Li'><a href="#">another</a></li>
 
             </div>
           </div>
