@@ -144,62 +144,7 @@
   }
 
 
-  .content-container-right{
-    width: 60%;
-    height: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position:relative;
-    overflow:hidden;
-    
-    .triangle{
   
-      width: 320px;
-      height: 320px;
-      background-color: orange;
-      border-radius: 45%;
-      border-top-right-radius: 10%;
-      border-bottom-right-radius: 40%;
-      border-bottom-left-radius: 10%;
-      border-top-left-radius: 40%;
-      transform: rotate(-10deg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-     
-      position: relative;
-      z-index: 1;
-      
-      
-    }
-    .triangle::after{
-      content: "";
-      width: 300px;
-      height: 300px;
-      background-color: orange;
-      border-radius: 45%;
-      border-top-right-radius: 10%;
-      border-bottom-right-radius: 40%;
-      border-bottom-left-radius: 10%;
-      border-top-left-radius: 40%;
-      transform: rotate(10deg);
-      position: absolute;
-      z-index: -1;
-      background-image: url(../../public/pexels-photo-7533376.jpeg);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-
-      
-
-
-    }
-
-
-    
-    
-  }
 }
 
 
@@ -303,6 +248,13 @@
 
   }
 
+  .triangle{
+    display: none;
+  }
+
+
+
+
 }
 
 
@@ -377,4 +329,32 @@
   }
   }
 
+  .content-container-right{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    overflow:hidden;
+    margin: 0 auto 40px;
+    
+    .triangle{
+      
+      width: 80%;
+      height: 400px;
+      background-image: url(../../public/pexels-photo-7533376.jpeg);
+     
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+     
+      
+      
+    }
+   
+    
+  }
+
+
+  
 }
