@@ -5,6 +5,9 @@
   border-radius: 5px;
   background-color: #009be2f6;
   min-height: 80vh;
+  background-image: url(../../public/cool-background2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .mainpage--container:hover{
@@ -337,24 +340,41 @@
     position:relative;
     overflow:hidden;
     margin: 0 auto 40px;
-    
-    .triangle{
-      
-      width: 80%;
-      height: 400px;
-      background-image: url(../../public/pexels-photo-7533376.jpeg);
-     
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-     
-      
-      
-    }
+       
+  }
+ 
+}
+
+@media only screen and (min-width:800px) and (max-width: 1200px) {
+  .triangle{
+    width: 80%;
+    // max-width: 620px;
+    height: 410px;
+    background-image: url(../../public/karsten-winegeart-QxZGpcnlrnA-unsplash.jpg);
+    border-radius: 50px;
+    border: 3px solid rgb(206, 206, 206);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
    
     
+    
   }
+}
 
-
-  
+@media only screen and (min-width: 1200px){
+  .triangle{
+    width: 80%;
+    // max-width: 620px;
+    height: 410px;
+    background-image: url(../../public/tamarcus-brown-YWI8pZdcuAA-unsplash.jpg);
+    border-radius: 50px;
+    border: 3px solid rgb(206, 206, 206);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+   
+    
+    
+  }
 }
