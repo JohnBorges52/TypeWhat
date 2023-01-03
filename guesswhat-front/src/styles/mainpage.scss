@@ -286,6 +286,7 @@
       height: 60%;
       gap: 4vw;
       padding-right: 60px;
+      box-shadow: rgba(0, 0, 0, 0.56) 10px 7px 15px 1px;
       
       .normal-Li{
         list-style: none;
@@ -358,6 +359,7 @@
     clip-path: url(#clip);
     position: relative;
     z-index: 2;
+    
   
   }
   .triangle-behind{
@@ -367,7 +369,7 @@
     min-width: 270px;
     height: 25vw;
     min-height: 325px;
-    background-color: rgb(198, 116, 252);
+    background-color: rgb(99, 102, 255);
    position: absolute;
    transform: rotate(15deg);
    z-index: 1;
