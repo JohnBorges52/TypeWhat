@@ -137,10 +137,25 @@
         background-image: linear-gradient(to right, rgb(51, 31, 105), rgb(118, 77, 230)) ;
         box-shadow: rgba(0, 0, 0, 0.56) 10px 7px 15px 1px;
         color: rgb(241, 235, 235);
+        font-weight: 500;
+
+        &:hover{
+        background-image: linear-gradient(to right, rgb(66, 35, 151), rgb(131, 91, 243)) ;
+        }
       }
       .btn-register{
         border: 2px solid rgb(111, 111, 211);
         color: rgb(241, 235, 235);
+        box-shadow: rgba(0, 0, 0, 0.56) 10px 7px 15px 1px;
+
+
+        &:hover{
+        border: 2px solid rgb(70, 70, 212);
+        font-weight: 500;
+        background-color: rgb(35, 100, 175);
+
+
+        }
 
       }
     }
@@ -251,12 +266,23 @@
 
   }
 
-  .triangle{
-    display: none;
+  .content-container-right{
+    width: 100%;
+    height: 300px;
+
+    .triangle{
+      margin: 0 auto;
+      width: 80%;
+      height: 40vw;
+      max-height: 265px;
+      background-image: url(../../public/tamarcus-brown-YWI8pZdcuAA-unsplash.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border: 2px solid gray;
+      border-radius: 50px;
+    }
   }
-
-
-
 
 }
 
@@ -291,8 +317,22 @@
       .normal-Li{
         list-style: none;
         text-transform: uppercase;
+        height: 100%;
+          display: flex;
+          align-items: center;
+
+      
+        
+
+     
         
       }
+
+      li:hover{
+        font-weight: 500;
+        border-top: 2px solid white;
+      }
+
       .small-Li{
         display: none;
       }
@@ -341,6 +381,7 @@
     position:relative;
     overflow:hidden;
     margin: 0 auto 40px;
+    padding-right: 40px;
        
   }
   .triangle{
@@ -352,13 +393,13 @@
     height: 30vw;
     min-height: 355px;
     background-image: url(../../public/tamarcus-brown-YWI8pZdcuAA-unsplash.jpg);
-    // border: 3px solid rgb(0, 0, 0);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     clip-path: url(#clip);
     position: relative;
     z-index: 2;
+    
     
   
   }
