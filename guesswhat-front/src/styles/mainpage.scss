@@ -342,39 +342,44 @@
     margin: 0 auto 40px;
        
   }
+  .triangle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+    min-width: 310px;
+    height: 30vw;
+    min-height: 355px;
+    background-image: url(../../public/tamarcus-brown-YWI8pZdcuAA-unsplash.jpg);
+    // border: 3px solid rgb(0, 0, 0);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    clip-path: url(#clip);
+    position: relative;
+    z-index: 2;
+  
+  }
+  .triangle-behind{
+    margin-left: 70px;
+    margin-bottom: 50px;
+    width: 50%;
+    min-width: 270px;
+    height: 25vw;
+    min-height: 325px;
+    background-color: rgb(198, 116, 252);
+   position: absolute;
+   transform: rotate(15deg);
+   z-index: 1;
+   clip-path: url(#clip);
+  }
  
 }
 
-@media only screen and (min-width:800px) and (max-width: 1200px) {
-  .triangle{
-    width: 80%;
-    // max-width: 620px;
-    height: 410px;
-    background-image: url(../../public/karsten-winegeart-QxZGpcnlrnA-unsplash.jpg);
-    border-radius: 50px;
-    border: 3px solid rgb(206, 206, 206);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-   
-    
-    
+@media only screen and (min-width:1000px) {
+  .content-container-left{
+    margin-left: 80px;
   }
 }
 
-@media only screen and (min-width: 1200px){
-  .triangle{
-    width: 80%;
-    // max-width: 620px;
-    height: 410px;
-    background-image: url(../../public/tamarcus-brown-YWI8pZdcuAA-unsplash.jpg);
-    border-radius: 50px;
-    border: 3px solid rgb(206, 206, 206);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-   
-    
-    
-  }
-}
+

@@ -75,11 +75,23 @@ export default function MainPage() {
           </div>
         
         </div>
-
+        
+        <svg height="0" width="0" class="svg-clip" style={{position:"absolute"}}>
+    <defs>
+         <clipPath id="clip" clipPathUnits="objectBoundingBox">
+           
+           <path d="M1,.21 Q1,0 .81,.09L.187,.4 Q0,.5 .187,.59L.81,.90 Q1,1 1,.79Z" />
+        </clipPath>
+    </defs>
+</svg>
+        
         <div className='content-container-right'>
           <div className='triangle'>
-
+            
           </div>
+          <div className='triangle-behind'>
+            
+            </div>
 
 
 
