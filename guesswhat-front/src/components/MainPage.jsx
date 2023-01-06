@@ -16,6 +16,7 @@ export default function MainPage() {
 
   const [isOpen, setOpen] = useState(false)
   return (
+    <div className='bg-home-container'>
 
     <div className='mainpage--container'>
 
@@ -111,5 +112,6 @@ export default function MainPage() {
     
 
 
+            </div>
   )
 }

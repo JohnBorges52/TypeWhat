@@ -6,9 +6,17 @@ import'../styles/register.scss'
 
 export default function Login() {
   return (
-    <div className='login-container'>
+    <div className='bg-login-container'>
+
+    <div className="login-wrapper">
+
       
-      <div className='input-label-container'>
+
+
+    <div className='login-container'>
+    <div className='profile-gif'></div>
+      
+    <div className='input-label-container'>
 
     <input className='form--input' type="email" placeholder=" " name="email" required />
     <label className="form--label" >E-mail</label>
@@ -30,7 +38,9 @@ export default function Login() {
     
 
 
+    </div>
 
+    </div>
     </div>
   )
 }

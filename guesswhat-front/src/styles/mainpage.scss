@@ -1,3 +1,24 @@
+.bg-home-container{
+  
+
+    min-height: 100vh;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    background-image: url(../../public/Wave.svg);
+    background-size: 2000px 1000px;
+    background-position: -500px 0;
+    animation: background 40s infinite alternate linear;
+  
+  
+  
+  
+}
+
+
+
+
 .mainpage--container{
   margin: 5vh auto;
   width: 80%;

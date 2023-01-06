@@ -39,8 +39,19 @@ export default function Register() {
 
 
   return (
+    <div className='bg-register-container'> 
+
+
+    <div className="register-wrapper">
+    <div className='pic-register-page'>
+      <h1 className='register-h1'>REGISTER</h1>
+    </div>
+    
     <div className='register-container'>
       
+    <div className='registration-profile-gif'></div>
+    <span className='register-title'>Sign-Up</span>
+
      <div className='input-label-container'>
 
     <input className='form--input' type="email" placeholder=" " name="email" required ref={emailRef} />
@@ -64,10 +75,12 @@ export default function Register() {
     <button className='btn-link' href="/register" onClick={(e)=>{onSubmit(e)}}><i></i> REGISTER </button>
     </div>
 
+    </div>
     
 
 
 
+    </div>
     </div>
   )
 }

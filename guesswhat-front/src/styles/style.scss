@@ -2,18 +2,3 @@
   100% {background-size: 4000px 1000px;}
 }
 
-.main-container{
-
-  min-height: 100vh;
-  max-width: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  position: relative;
-  background-image: url(../../public/Wave.svg);
-  background-size: 2000px 1000px;
-  background-position: -500px 0;
-  animation: background 40s infinite alternate linear;
-
-
-
-}

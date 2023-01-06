@@ -1,15 +1,51 @@
+.bg-login-container{
+  min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  background-image: url(../../public/Particles-1s-3000px.svg);
+  // background-image: linear-gradient(-20deg, #49216e 0%, #7835b8 50%, #9941ec 100% );
+  background-size: 2131px 1000px;
+  background-position: -500px 0;
+  animation: background 100s infinite alternate linear;
+
+}
+
+.login-wrapper{
+
+height: 100vh;
+width: auto ;
+display: flex;
+flex-direction: column;
+
+}
+
+.profile-gif{
+  margin-bottom: 35px;
+  width: 170px;
+  height: 170px;
+  border: 2px solid #abff8a;
+  border-radius: 50%;
+  background-image: url(../../public/21-avatar-lineal.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
 .login-container{
-  width: 70%;
-  max-width: 300px ;
-  height: 350px;
-  background-color:#026a9bf6 ;
-  border: 1px solid #ffffff;
-  border-radius: 8px;
+  width: 35%;
+  min-width: 300px;
+  height: 100vh;
+  // background-image: linear-gradient(-20deg, #49216e 0%, #7835b8 50%, #9941ec 100% );
+  background-color: #49216e;
+  border-right: 4px solid #ffffff;
+  border-left: 4px solid white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: auto;
-  margin-top: 150px;
   align-items: center;
 
   
@@ -35,9 +71,5 @@
   width: 100%;
   display: flex;
   justify-content: center;
-}
-
-.login-container input:nth-child(4){
-  margin-bottom: 30px;
 }
 
