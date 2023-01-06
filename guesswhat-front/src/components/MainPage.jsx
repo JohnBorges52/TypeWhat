@@ -89,9 +89,7 @@ export default function MainPage() {
           <div className='triangle'>
             
           </div>
-          <div className='triangle-behind'>
-            
-            </div>
+          <div className='triangle-behind'> </div>
 
 
 

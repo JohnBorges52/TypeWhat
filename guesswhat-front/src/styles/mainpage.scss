@@ -10,10 +10,6 @@
   background-size: cover;
 }
 
-.mainpage--container:hover{
-  background-color: #0f8bc5;
-}
-
 .top-bar-container{
   width: 100%;
   height: 15%;
@@ -268,19 +264,20 @@
 
   .content-container-right{
     width: 100%;
-    height: 300px;
+    height: 45vw;
 
     .triangle{
       margin: 0 auto;
       width: 80%;
       height: 40vw;
       max-height: 265px;
-      background-image: url(../../public/tamarcus-brown-YWI8pZdcuAA-unsplash.jpg);
+      background-image: url(../../public/business-woman-working-on-laptop-3120279-2629637-removebg-preview.png);
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
-      border: 2px solid gray;
-      border-radius: 50px;
+    }
+    .triangle-behind{
+      display: none;
     }
   }
 
@@ -320,6 +317,7 @@
         height: 100%;
           display: flex;
           align-items: center;
+         transition: all 0.1s;
 
       
         
@@ -331,6 +329,7 @@
       li:hover{
         font-weight: 500;
         border-top: 2px solid white;
+        border-bottom: 2px solid white;
       }
 
       .small-Li{
@@ -388,33 +387,35 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 55%;
-    min-width: 310px;
+    width: 35vw;
+    min-width: 400px;
     height: 30vw;
     min-height: 355px;
-    background-image: url(../../public/tamarcus-brown-YWI8pZdcuAA-unsplash.jpg);
+    background-image: url(../../public/business-woman-working-on-laptop-3120279-2629637-removebg-preview.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
-    clip-path: url(#clip);
+    background-size: contain;
+    // margin-left: 80px;
+    // clip-path: url(#clip);
     position: relative;
     z-index: 2;
+    
     
     
   
   }
   .triangle-behind{
-    margin-left: 70px;
-    margin-bottom: 50px;
+    margin-right: 80px;
+    margin-bottom: 45px;
     width: 50%;
     min-width: 270px;
     height: 25vw;
     min-height: 325px;
     background-color: rgb(99, 102, 255);
-   position: absolute;
-   transform: rotate(15deg);
-   z-index: 1;
-   clip-path: url(#clip);
+    position: absolute;
+    transform: rotate(15deg);
+    z-index: 1;
+    clip-path: url(#clip);
   }
  
 }
@@ -424,5 +425,8 @@
     margin-left: 80px;
   }
 }
+
+
+
 
 
