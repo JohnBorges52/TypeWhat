@@ -50,7 +50,7 @@ export default function Register() {
     <div className='register-container'>
       
     <div className='registration-profile-gif'></div>
-    <span className='register-title'>Sign-Up</span>
+    <span className='span-title'>Sign-Up</span>
 
      <div className='input-label-container'>
 

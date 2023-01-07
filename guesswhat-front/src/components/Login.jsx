@@ -6,15 +6,11 @@ import'../styles/register.scss'
 
 export default function Login() {
   return (
-    <div className='bg-login-container'>
-
     <div className="login-wrapper">
-
-      
-
 
     <div className='login-container'>
     <div className='profile-gif'></div>
+    <span className='span-title'>Login</span>
       
     <div className='input-label-container'>
 
@@ -41,6 +37,6 @@ export default function Login() {
     </div>
 
     </div>
-    </div>
+    
   )
 }

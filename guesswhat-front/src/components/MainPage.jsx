@@ -5,18 +5,28 @@ import { faFeather } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 
 import Hamburger from 'hamburger-react'
-
-
-
-
-
-
+import Login from './Login'
 
 export default function MainPage() {
 
   const [isOpen, setOpen] = useState(false)
+  const [loginOpen, setLoginOpen] = useState(true)
+
+  const addLoginClass = () => {
+
+    let element = document.getElementById("blur-container");
+    element.classList.add("blured-container");
+
+
+  }
+
+
   return (
-    <div className='bg-home-container'>
+
+  <>
+  
+    <div className='bg-home-container' id='blur-container'>
+
 
     <div className='mainpage--container'>
 
@@ -43,12 +53,6 @@ export default function MainPage() {
              </> 
             }         
               
-
-
-
-
-
-
               <li className='normal-Li'><a href="#">Play</a></li>  
               <li className='normal-Li'><a href="#">Ranking</a></li>  
               <li className='normal-Li'><a href="#">About</a></li>  
@@ -60,6 +64,7 @@ export default function MainPage() {
       </div>
 
       <div className='content-container'>
+
         <div className='content-container-left'>
 
           <div className='content-container-left-text'>
@@ -71,8 +76,8 @@ export default function MainPage() {
             <h5> Test yor habilities to see how many words you can type in one minute and climb your way to the top of players. You will need to test your typing habilities as well as your vision in order to see the words moving.</h5>
           </div>
           <div className='content-container-left-subtext-links'>
-            <a  className='a-link-login btn-login' href="/login"> Login now</a>
-            <a  className='a-link-login btn-register' href="/register"> Register here </a>
+            <a  className='a-link-login btn-login' onClick={()=>{addLoginClass()}} > Login now</a>
+            <a  className='a-link-login btn-register'> Register here </a>
           </div>
         
         </div>
@@ -98,20 +103,15 @@ export default function MainPage() {
 
       </div>
 
-
-
-
-
-
-      
-
-
-
     </div>
 
-    
+ {/* --------------LOGIN---------------------------- */}
+ {loginOpen && <Login/>}
 
 
-            </div>
+  
+
+</div>
+ </> 
   )
 }

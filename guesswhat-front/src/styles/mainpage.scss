@@ -17,15 +17,18 @@
 }
 
 
+.blured-container{
+  filter: blur(4px);
+}
 
 
 .mainpage--container{
-  margin: 5vh auto;
+  margin: 7.5vh auto;
   width: 80%;
   border: 1px solid white;
   border-radius: 5px;
   background-color: #009be2f6;
-  min-height: 80vh;
+  min-height: 85vh;
   background-image: url(../../public/cool-background2.png);
   background-repeat: no-repeat;
   background-size: cover;
