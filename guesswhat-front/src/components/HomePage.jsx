@@ -6,19 +6,18 @@ export default function HomePage() {
     <div className='homepage-container'>
 
 
-      <div className='homepage-btn-container'> 
+      <div className='homepage-menu-container'> 
+
+          <h1 className='play-tittle'>
+           LET'S PLAY
+          </h1>
+        <div className='play-btns-div'>
+
+         <button className='general-btn play-btn'> START GAME </button>
+         {/* <button className='general-btn leaderboard-btn'> LEADERBOARD </button> */}
+        </div>
         
-      <div className='play-btn'>PLAY</div>
-      
-      <div className='ranking-btn'>RANKING</div>
-
       </div>
-
-
-
-
-
-
 
     </div>
 

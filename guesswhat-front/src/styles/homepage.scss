@@ -1,83 +1,112 @@
 .homepage-container{
-  width: 100%;
-  height: calc(100% - 92px);
+  width: auto;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url(../../public/1f4a76b7fca8293d3a5a43a1952c2fa8.jpg);
+  // background-size: 1920px 1000px;
+  // background-position: -500px 0;
+  // animation: background 40s infinite alternate linear;
+
   
 }
-.play-btn{
 
-  color: white;
-  border: 0px solid white;
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
+.homepage-menu-container{
+  width: 50%;
+  min-width: 300px ;
+  height: 70vw;
+  min-height: 600px;
+  border: 2px solid white;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  // margin-top: -150px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  transition: 400ms;
-  font-size: 1.5em;
-  animation: pulse 3s infinite;
+  flex-direction: column;
+  justify-content: space-between;
 
-}
+  .play-tittle{
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    transition: 400ms;
+    font-size: 3.5em;
+    text-align: center;
+    margin-top: 100px;
 
-.play-btn::after{
-  content: "";
-  width: 400px;
-  height: 400px;
-  position: absolute;
-  background-image: linear-gradient(225deg, #bdd827 0%, #f87a26 50%, #c625d0 100% );
-  z-index: -1;
-  transition: transform 0.5s ease;
   
+  }
+
+  .play-btns-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30PX;
+
+    .general-btn{
+
+      width: 90%;
+      min-width: 150px;
+      height: 2.5em;
+      border: 1px solid white;
+      border-radius: 7px;
+      background-color: transparent;
+      color: white;
+      cursor: pointer;
+      font-size: 3em;
+
+    }
+
+    .play-btn{
+      background-image: linear-gradient(to right, rgba(51, 31, 105, 0.555), rgba(118, 77, 230, 0.555)) ;
+      font-family: 'Press Start 2P', cursive;
+
+      &:hover{
+      background-image: linear-gradient(to right, rgb(51, 31, 105), rgb(118, 77, 230)) ;
+
+      }
+
+      
+    }
+
+    // .leaderboard-btn{
+    // font-family: 'Press Start 2P', cursive;
+    // background-image: linear-gradient(to right, rgba(51, 31, 105, 0.555), rgba(118, 77, 230, 0.555)) ;
+
+
+    // }
+  }
+
+
+
 
 }
 
-.play-btn:hover{
-  width: 200px;
-  height: 200px;
-  font-size: 2em;
-  transition: 400ms;
+
+
+// @keyframes rotation {
+//   from{transform: rotate(0deg);}
+//   to{transform: rotate(359deg);}
   
-  border: 3px solid rgb(255, 255, 255);
-  
-}
-.play-btn:hover::after{
-  animation: rotation 2s infinite linear;
-}
+// }
 
-@keyframes rotation {
-  from{transform: rotate(0deg);}
-  to{transform: rotate(359deg);}
-  
-}
+// @keyframes pulse {
+//   0%{box-shadow: 0 0 0 0 rgb(231, 84, 16);}
+//   90%{box-shadow: 0 0 0 20px rgba(231, 84, 16, 0.4);}
+//   100%{box-shadow: 0 0 0 60px rgba(231, 84, 16, 0.027);}
+// }
 
-@keyframes pulse {
-  0%{box-shadow: 0 0 0 0 rgb(231, 84, 16);}
-  90%{box-shadow: 0 0 0 20px rgba(231, 84, 16, 0.4);}
-  100%{box-shadow: 0 0 0 60px rgba(231, 84, 16, 0.027);}
-}
-
-.ranking-btn {
-color: white;
-border: 2px solid white;
-padding: 15px 30px;
-border-radius: 15px;
-background-color: #f87a26;
-cursor: pointer;
-font-size: 1.1em;
-transition: 200ms;
+// .ranking-btn {
+// color: white;
+// border: 2px solid white;
+// padding: 15px 30px;
+// border-radius: 15px;
+// background-color: #f87a26;
+// cursor: pointer;
+// font-size: 1.1em;
+// transition: 200ms;
 
 
 
-}
+// }
 
 
 .ranking-btn::after{
@@ -92,24 +121,6 @@ transition: 200ms;
 }
 
 
-.homepage-btn-container{
-  margin-top: 150px;
-  width: 40%;
-  min-width: 280px;
 
-  height: 55vh;
-  min-height: 370px;
-
-  // border: 1px solid white;
-  // border-radius: 1px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  background-color: #026b9b00;
-
-
-
-}
 
 

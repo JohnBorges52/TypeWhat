@@ -11,6 +11,7 @@
 }
 
 .blured-container{
+  transition: .6s;
   filter: blur(4px);
 }
 
@@ -149,6 +150,8 @@
         background-image: linear-gradient(to right, rgb(66, 35, 151), rgb(131, 91, 243)) ;
         }
       }
+
+      
       .btn-register{
         border: 2px solid rgba(255, 145, 0, 0.329);
         color: rgb(241, 235, 235);

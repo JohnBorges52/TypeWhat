@@ -1,16 +1,19 @@
 .gamepage-container{
-
-  border: 1px solid red;
-  width: 100%;
-  height: calc(100% - 92px);
+  border: 0px solid red;
+  height: 90vh;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
+  background-image: url(../../public/cool-background.png);
+  background-position: center;
+  background-size: cover;
+  margin: 5vh 0 ;
 
 }
 
 .randomwords-container{
   border: 1px solid white;
+  text-transform: uppercase;
   height: 500px;
   width: 90%;
   margin: 0 auto;

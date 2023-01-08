@@ -171,23 +171,12 @@ export default function GamePage() {
     
     }
 
-
-
-
-    
-
     <div className='typewords-container'> 
 
       <input className='input-words' id="input-word" ref={inputRef} type="text" onChange={(e)=>{setUserWord(e.target.value)}}  />
 
         
     </div>
-
-
-
-
-
-
 
     </div>
   )

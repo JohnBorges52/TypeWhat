@@ -28,6 +28,28 @@ export default function MainPage() {
 
   }
 
+  const addDisplayClass = () => {
+
+    let element = document.getElementById("login-wrapper-display");
+    element.classList.add("login-wrapper-display");
+    setLoginOpen(true)
+
+
+  }
+  const removeDisplayClass = () => {
+
+    let element = document.getElementById("login-wrapper-display");
+    element.classList.remove("login-wrapper-display");
+    setLoginOpen(false)
+
+  }
+
+
+
+
+
+
+
   useEffect(() => {
     setLoginOpen(false)
   },[])
@@ -59,14 +81,14 @@ export default function MainPage() {
              
              {isOpen &&
              <>
-              <li className='small-Li'><a href="#">Play</a></li>  
+              <li className='small-Li'><a href="/play">Play</a></li>  
               <li className='small-Li'><a href="#">Ranking</a></li>  
               <li className='small-Li'><a href="#">About</a></li>  
               <li className='small-Li'><a href="#">another</a></li>     
              </> 
             }         
               
-              <li className='normal-Li'><a href="#">Play</a></li>  
+              <li className='normal-Li'><a href="/play">Play</a></li>  
               <li className='normal-Li'><a href="#">Ranking</a></li>  
               <li className='normal-Li'><a href="#">About</a></li>  
               <li className='normal-Li'><a href="#">another</a></li>
@@ -89,8 +111,9 @@ export default function MainPage() {
             <h5> Test yor habilities to see how many words you can type in one minute and climb your way to the top of players. You will need to test your typing habilities as well as your vision in order to see the words moving.</h5>
           </div>
           <div className='content-container-left-subtext-links'>
-            <a  className='a-link-login btn-login' onClick={()=>{addLoginClass()}} > Login now</a>
+            <a  className='a-link-login btn-login' onClick={()=>{addLoginClass(); removeDisplayClass()}} > Login now</a>
             <a  className='a-link-login btn-register' href='/register'> Register here </a>
+            <a  className='a-link-login btn-register' href='#' onClick={()=> addLoginClass()}> PLAY NOW </a>
           </div>
         
         </div>
@@ -117,15 +140,20 @@ export default function MainPage() {
 
 </div>
  {/* --------------LOGIN---------------------------- */}
- {loginOpen && <Login 
- onCloseLogin={()=> {
+ {/* {loginOpen && 
+ <Login 
+  onCloseLogin={()=> {
   removeLoginClass()
  }}
- />}
-
-
+ />} */}
+ 
+ 
+<Login 
+  onCloseLogin={()=> {
+    addDisplayClass(); removeLoginClass();
+  }} />
   
+  </>
 
- </> 
   )
 }

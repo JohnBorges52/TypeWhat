@@ -10,7 +10,7 @@ export default function Login(props) {
   
 
   return (
-    <div className="login-wrapper">
+    <div className="login-wrapper login-wrapper-display" id='login-wrapper-display'>
 
     <div className='login-container'>
       <button className='close-btn' onClick={props.onCloseLogin}> ×</button>
@@ -38,9 +38,6 @@ export default function Login(props) {
    
     <button  className='btn-login-registration' href="/login"> LOGIN </button>
     </div>
-
-    
-
 
     </div>
 
