@@ -1,6 +1,4 @@
 .bg-home-container{
-  
-
     min-height: 100vh;
     max-width: 100%;
     overflow-x: hidden;
@@ -10,17 +8,11 @@
     background-size: 2000px 1000px;
     background-position: -500px 0;
     animation: background 40s infinite alternate linear;
-  
-  
-  
-  
 }
-
 
 .blured-container{
   filter: blur(4px);
 }
-
 
 .mainpage--container{
   margin: 7.5vh auto;
@@ -65,11 +57,9 @@
         padding-right: 10px;
       }
     }
-
   }
-
-  
 }
+
 .content-container {
   width: calc(100% - 40px);
   height: 85%;
@@ -87,7 +77,6 @@
     gap: 20px;
     
     .content-container-left-text{
-
       span{
         margin: 0;
         color: rgb(35, 100, 175);
@@ -101,7 +90,6 @@
         margin: 0;
         font-family: 'Montserrat', sans-serif;
         font-weight: 800;
-        // font-size: min(max(1.5em, 4vw), 3.5em); 
 
       }
       
@@ -110,9 +98,7 @@
         font-family: 'Montserrat', sans-serif;
         font-weight: 400;
         margin: 0;
-
       }
-   
     }
 
     .content-container-left-subtext{   
@@ -129,9 +115,7 @@
         font-size: 1em;
         font-family: 'Montserrat', sans-serif;
         font-weight: 300;
-
       }
-      
     }
     .content-container-left-subtext-links{
       display: flex;
@@ -158,21 +142,24 @@
         box-shadow: rgba(0, 0, 0, 0.56) 10px 7px 15px 1px;
         color: rgb(241, 235, 235);
         font-weight: 500;
+        cursor: pointer;
+
 
         &:hover{
         background-image: linear-gradient(to right, rgb(66, 35, 151), rgb(131, 91, 243)) ;
         }
       }
       .btn-register{
-        border: 2px solid rgb(111, 111, 211);
+        border: 2px solid rgba(255, 145, 0, 0.329);
         color: rgb(241, 235, 235);
         box-shadow: rgba(0, 0, 0, 0.56) 10px 7px 15px 1px;
 
 
         &:hover{
-        border: 2px solid rgb(70, 70, 212);
+        border: 2px solid rgb(255, 145, 0);
         font-weight: 500;
-        background-color: rgb(35, 100, 175);
+        background-image: linear-gradient(to right, rgb(255, 145, 0), rgb(224, 136, 110)) ;
+
 
 
         }
@@ -339,21 +326,17 @@
         list-style: none;
         text-transform: uppercase;
         height: 100%;
-          display: flex;
-          align-items: center;
-         transition: all 0.1s;
+        display: flex;
+        align-items: center;
+        transition: all 0.1s;
 
-      
-        
-
-     
-        
       }
 
       li:hover{
         font-weight: 500;
-        border-top: 2px solid white;
-        border-bottom: 2px solid white;
+        border-top: 2px solid rgb(255, 192, 109);
+        border-bottom: 2px solid rgb(255, 192, 109);
+        
       }
 
       .small-Li{

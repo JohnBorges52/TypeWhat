@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import'../styles/mainpage.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFeather } from '@fortawesome/free-solid-svg-icons'
@@ -16,9 +16,22 @@ export default function MainPage() {
 
     let element = document.getElementById("blur-container");
     element.classList.add("blured-container");
+    setLoginOpen(true)
 
 
   }
+  const removeLoginClass = () => {
+
+    let element = document.getElementById("blur-container");
+    element.classList.remove("blured-container");
+    setLoginOpen(false)
+
+  }
+
+  useEffect(() => {
+    setLoginOpen(false)
+  },[])
+
 
 
   return (
@@ -77,7 +90,7 @@ export default function MainPage() {
           </div>
           <div className='content-container-left-subtext-links'>
             <a  className='a-link-login btn-login' onClick={()=>{addLoginClass()}} > Login now</a>
-            <a  className='a-link-login btn-register'> Register here </a>
+            <a  className='a-link-login btn-register' href='/register'> Register here </a>
           </div>
         
         </div>
@@ -93,11 +106,8 @@ export default function MainPage() {
         
         <div className='content-container-right'>
           <div className='triangle'>
-            
           </div>
           <div className='triangle-behind'> </div>
-
-
 
         </div>
 
@@ -105,13 +115,17 @@ export default function MainPage() {
 
     </div>
 
+</div>
  {/* --------------LOGIN---------------------------- */}
- {loginOpen && <Login/>}
+ {loginOpen && <Login 
+ onCloseLogin={()=> {
+  removeLoginClass()
+ }}
+ />}
 
 
   
 
-</div>
  </> 
   )
 }

@@ -1,14 +1,19 @@
 import React from 'react'
 import'../styles/login.scss'
 import'../styles/register.scss'
+import'../styles/mainpage.scss'
 
 
 
-export default function Login() {
+export default function Login(props) {
+
+  
+
   return (
     <div className="login-wrapper">
 
     <div className='login-container'>
+      <button className='close-btn' onClick={props.onCloseLogin}> ×</button>
     <div className='profile-gif'></div>
     <span className='span-title'>Login</span>
       
@@ -23,12 +28,15 @@ export default function Login() {
 
     <input className='form--input' type="password" placeholder=" " name="password" required />
     <label className="form--label" >Password</label>
+     <a className='forgotPsw' href='#'>Forgot Password?</a>
+
     
     </div>
 
     <div className='login-btn-container'>
       
-    <button  className='btn-link' href="/login"> LOGIN </button>
+   
+    <button  className='btn-login-registration' href="/login"> LOGIN </button>
     </div>
 
     

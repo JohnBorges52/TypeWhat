@@ -31,12 +31,7 @@ export default function Register() {
       setErrorMessage("Password does not match")
       console.log("Password does not match!")
     }
-    
-
   }
-
-
-
 
   return (
     <div className='bg-register-container'> 
@@ -72,7 +67,7 @@ export default function Register() {
 
     <div className='register-btn-container'>
       
-    <button className='btn-link' href="/register" onClick={(e)=>{onSubmit(e)}}><i></i> REGISTER </button>
+    <button className='btn-login-registration' href="/register" onClick={(e)=>{onSubmit(e)}}> REGISTER </button>
     </div>
 
     </div>
