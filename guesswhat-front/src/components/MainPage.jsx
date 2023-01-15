@@ -6,6 +6,7 @@ import { useState } from 'react'
 
 import Hamburger from 'hamburger-react'
 import Login from './Login'
+import GamePage from './GamePage'
 
 export default function MainPage() {
 
@@ -152,6 +153,8 @@ export default function MainPage() {
   onCloseLogin={()=> {
     addDisplayClass(); removeLoginClass();
   }} />
+
+<GamePage />
   
   </>
 

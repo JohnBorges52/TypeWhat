@@ -1,25 +1,33 @@
 .gamepage-container{
+  position: absolute;
+  top: 0;
+  right: 10%;
+  z-index: 3;
+
+
   border: 0px solid red;
-  height: 90vh;
+  height: 80vh;
+  width: 80%;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
   background-image: url(../../public/cool-background.png);
   background-position: center;
   background-size: cover;
-  margin: 5vh 0 ;
-
+  margin: 10vh 0;
 }
+
 
 .randomwords-container{
   border: 1px solid white;
   text-transform: uppercase;
   height: 500px;
   width: 90%;
-  margin: 0 auto;
+  margin: 10px auto;
   font-size: 2em;
   position: relative;
 }
+
 
 .currentWord{
   color:white;
@@ -55,7 +63,6 @@
 .counter{
   color: white;
   font-size: 2em;
-  margin: 0 auto;
   text-align: center;
   border: 1px solid white;
   border-radius: 50%;
@@ -69,6 +76,33 @@
 
 .counter-animation{
   animation: pulse .5s normal;
+}
+
+.points-span{
+  width: 50px;
+  // border: 1px solid white;
+  height: 50px;
+  background-image: url(../../public/298-coins-flat.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.points-span-animated{
+ 
+  background-image: url(../../public/298-coins-flat.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.game-information-points{
+  display: flex;
+  flex-direction: row;
+  width: 12%;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  
+
 }
 
 

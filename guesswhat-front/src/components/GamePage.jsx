@@ -132,7 +132,7 @@ export default function GamePage() {
           setPlaying(false)
           
         }
-      },1000)
+      },2000)
     }
 
     const formatTime = (time) => {
@@ -142,9 +142,13 @@ export default function GamePage() {
     const animateCounter = () => {
       const counterElement = document.getElementById('counter-id');
       counterElement.classList.add("counter-animation");
+
+      const pictureElement = document.getElementById('animated-pic-id');
+      pictureElement.classList.add("points-span-animated");
       
       setTimeout(()=>{
       counterElement.classList.remove("counter-animation");
+      pictureElement.classList.remove("points-span-animated");
 
       },1000)
 
@@ -156,7 +160,7 @@ export default function GamePage() {
 
     <div className='randomwords-container'>
       
-      <div className='currentWord'> {currentWord}</div>
+      <div className='currentWord'> {currentWord} </div>
       
     </div>
     <div className='bottom-limit'></div>
@@ -164,10 +168,17 @@ export default function GamePage() {
     {!playing ? 
     <button className='startgame-btn' onClick={()=>{generateRandomWord(); setPlaying(true); setRunningTimer(true); setMileSecond(999); setSecond(888); setMinute(1); setCounter(0) }}> START </button>
     :
-    <>
-    <span className='timer'>{formatTime(minute)} : {formatTime(second)} : {mileSecond}</span>
-    <span className='counter' id='counter-id'>{counter}</span>
-    </>
+    <div className='game-information'>
+      <span className='timer'>{formatTime(minute)} : {formatTime(second)} : {mileSecond}</span>
+      <div className='game-information-points'>
+
+
+        <span className='points-span' id='animated-pic-id'></span>
+
+
+        <span className='counter' id='counter-id'> {counter}</span>
+      </div>
+    </div>
     
     }
 
