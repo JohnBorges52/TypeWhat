@@ -9,15 +9,17 @@ import $ from 'jquery';
 
 
 
+
 export default function GamePage() {
 
     const[currentWord, setCurrentWord] = useState("");
     const[userWord, setUserWord] = useState("");
     const [playing, setPlaying] = useState(false)
     const [counter, setCounter] = useState(0)
+    const [startBtn, setStartBtn] = useState(true)
 
     const [mileSecond, setMileSecond] = useState(999)
-    const [second, setSecond] = useState(9)
+    const [second, setSecond] = useState(59)
     const [minute, setMinute] = useState(1)
 
     const [runningTimer, setRunningTimer] = useState(false)
@@ -122,7 +124,7 @@ export default function GamePage() {
         }
         if(playing && minute > 0 && second === 0){
           setMinute(minute-1)
-          setSecond(5)
+          setSecond(59)
           
         }
         if(playing && minute === 0 && second === 0 ){
@@ -132,7 +134,7 @@ export default function GamePage() {
           setPlaying(false)
           
         }
-      },2000)
+      },1000)
     }
 
     const formatTime = (time) => {
@@ -154,22 +156,37 @@ export default function GamePage() {
 
     }
 
+    const hideElement = () => {
+      const element = document.getElementById("futureHiddenElement")
+    }
+
 
   return (
     <div className='gamepage-container'>
 
     <div className='randomwords-container'>
+
+      
+      <div className='start-btn-container'>
+      
+      {!playing ?
+      <button className='start-btn' onClick={()=>{generateRandomWord(); setPlaying(true); setRunningTimer(true); setMileSecond(999); setSecond(59); setMinute(1); setCounter(0) }}>
+        START
+      </button>
+      :
+      <>
+      </>
+  }
+      </div>
       
       <div className='currentWord'> {currentWord} </div>
       
     </div>
     <div className='bottom-limit'></div>
-
-    {!playing ? 
-    <button className='startgame-btn' onClick={()=>{generateRandomWord(); setPlaying(true); setRunningTimer(true); setMileSecond(999); setSecond(888); setMinute(1); setCounter(0) }}> START </button>
-    :
+    
     <div className='game-information'>
       <span className='timer'>{formatTime(minute)} : {formatTime(second)} : {mileSecond}</span>
+
       <div className='game-information-points'>
 
 
@@ -177,10 +194,19 @@ export default function GamePage() {
 
 
         <span className='counter' id='counter-id'> {counter}</span>
+        <div className='option-btn-div'>
+
+        <div className='next-icon'> Jump!</div>
+        
+        
+        <button className='option-btn stop-btn'>stop</button>
+
+        </div>
+
       </div>
     </div>
     
-    }
+    
 
     <div className='typewords-container'> 
 

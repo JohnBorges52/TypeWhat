@@ -3,9 +3,7 @@
   top: 0;
   right: 10%;
   z-index: 3;
-
-
-  border: 0px solid red;
+  border-radius: 15px ;
   height: 80vh;
   width: 80%;
   display: flex;
@@ -28,10 +26,47 @@
   position: relative;
 }
 
+.start-btn-container{
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+  .start-btn{
+    color: rgb(218, 218, 218);
+    border: none;
+    font-size: 1em;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, rgb(98, 76, 158), rgb(133, 90, 252)) ;
+    box-shadow: 5px 10px 30px -3px #292929;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+    transition: all .3s ease ;
+    
+    
+    &:hover{
+    color: white;
+    animation: pulseBigger 2s infinite;
+    font-size: 1.1em;
+    border: 1px solid rgb(255, 255, 255);
+
+
+    }
+
+  }
+
+}
+
+
 
 .currentWord{
   color:white;
-  border: 1px solid red;
+  // border: 1px solid red;
   width: fit-content;
   position: absolute;
  
@@ -39,7 +74,7 @@
 }
 
 .typewords-container{
-  border: 1px solid white;
+  // border: 1px solid white;
   height: 100px;
   margin: 0 auto;
   width: 50%;
@@ -97,12 +132,74 @@
 .game-information-points{
   display: flex;
   flex-direction: row;
-  width: 12%;
-  justify-content: space-between;
+  width: 50%;
+  justify-content: space-evenly;
   align-items: center;
   margin: auto;
-  
+  border: 1px solid yellow;
 
+  .option-btn-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100px;
+    height: 100px;
+
+
+    .option-btn{
+      color: white;
+      border: none;
+      height: 30px;
+      border-radius: 20px;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 0.95em;
+    }
+    
+    .next-icon{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      text-transform: uppercase;
+      color: transparent;
+      width: 120px;
+      
+    }
+
+    .next-icon::before{
+      content: "";
+      display: block;
+      background-image: url(../../public/icons8-long-jump-80.png);
+      width: 50px;
+      height: 50px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+     
+
+    }
+
+    .next-icon:hover::before {
+      color: white;
+      width: 150px;
+      border: 1px solid white;
+    }
+
+
+
+    .stop-btn{
+      background-image: linear-gradient(to right, rgb(230, 41, 8), rgba(218, 105, 105, 0.842)) ;
+
+    }
+  
+  
+  }
+}
+
+.display-hidden {
+  display: none;
 }
 
 
@@ -119,9 +216,15 @@
 }
 
 @keyframes pulse {
-  0%{box-shadow: 0 0 0 0 rgb(231, 84, 16);}
-  100%{box-shadow: 0 0 0 20px rgba(231, 84, 16, 0.027);}
+  0%{box-shadow: 0 0 0 0 rgb(186, 119, 231);}
+  100%{box-shadow: 0 0 0 10px rgba(189, 21, 189, 0.027);}
 }
+@keyframes pulseBigger {
+  0%{box-shadow: 0 0 0 0 rgb(168, 47, 179);}
+    90%{box-shadow: 0 0 0 20px rgba(165, 78, 177, 0.4);}
+    100%{box-shadow: 0 0 0 60px rgba(231, 115, 179, 0.027);}
+}
+
 
 .input-words{
   border: 2px solid white;
