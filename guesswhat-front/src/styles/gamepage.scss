@@ -184,6 +184,7 @@
       transition: all .1s ease ;
     }
 
+
     .next-icon:hover{
       background-image: url(../../public/icons8-long-jump-80-black.png);
       width: 120px;
@@ -191,6 +192,8 @@
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
+      animation: vibrate .8s normal;
+
     }
 
     .next-icon:hover, .next-icon:hover::after {
@@ -214,6 +217,15 @@
   display: none;
 }
 
+@keyframes vibrate {
+  0%{transform: rotate(-5deg)}
+  100%{transform: rotate(5deg)}
+}
+
+@keyframes vibrateReverse {
+  0%{transform: rotate(7deg)}
+  100%{transform: rotate(-7deg)}
+}
 
 
 @keyframes currentWordY {
@@ -231,6 +243,7 @@
   0%{box-shadow: 0 0 0 0 rgb(186, 119, 231);}
   100%{box-shadow: 0 0 0 10px rgba(189, 21, 189, 0.027);}
 }
+
 @keyframes pulseBigger {
   0%{box-shadow: 0 0 0 0 rgb(168, 47, 179);}
     90%{box-shadow: 0 0 0 20px rgba(165, 78, 177, 0.4);}
