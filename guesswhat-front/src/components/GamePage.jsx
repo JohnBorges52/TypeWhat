@@ -199,7 +199,7 @@ export default function GamePage() {
         <div className='next-icon'></div>
         
         
-        <button className='option-btn stop-btn'>stop</button>
+        <div className='stop-icon'></div>
 
         </div>
 

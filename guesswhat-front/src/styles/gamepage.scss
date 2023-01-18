@@ -204,11 +204,47 @@
 
 
 
-    .stop-btn{
-      background-image: linear-gradient(to right, rgb(230, 41, 8), rgba(218, 105, 105, 0.842)) ;
+    .stop-icon{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      background-image: url(../../public/icons8-unavailable-80.png);
+      width: 120px;
+      height: 35px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-left: -30px;
+      transition: all .3s ease ;
+
 
     }
-  
+    .stop-icon::after{
+      content: "stop";
+      text-transform: uppercase;
+      color: transparent;
+      margin-right: -30px;
+      margin-bottom: 10px;
+      font-size: 1em;
+      transition: all .1s ease ;
+    }
+    .stop-icon:hover{
+      background-image: url(../../public/icons8-unavailable-80red.png);
+      width: 120px;
+      height: 40px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: vibrate .8s normal;
+      
+
+    }
+    .stop-icon:hover, .stop-icon:hover::after {
+      font-size: 1.2em;
+      color: rgb(255, 255, 255);
+      
+    }
   
   }
 }
