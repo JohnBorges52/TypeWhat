@@ -196,7 +196,7 @@ export default function GamePage() {
         <span className='counter' id='counter-id'> {counter}</span>
         <div className='option-btn-div'>
 
-        <div className='next-icon'> Jump!</div>
+        <div className='next-icon'></div>
         
         
         <button className='option-btn stop-btn'>stop</button>

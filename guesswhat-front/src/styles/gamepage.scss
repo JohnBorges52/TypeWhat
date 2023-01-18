@@ -161,30 +161,42 @@
       flex-direction: row;
       align-items: center;
       justify-content: flex-end;
-      text-transform: uppercase;
-      color: transparent;
-      width: 120px;
-      
-    }
-
-    .next-icon::before{
-      content: "";
-      display: block;
       background-image: url(../../public/icons8-long-jump-80.png);
-      width: 50px;
+      width: 120px;
       height: 50px;
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
-
-     
-
+      margin-left: -30px;
+      transition: all .3s ease ;
+      
+   
+      
     }
 
-    .next-icon:hover::before {
-      color: white;
-      width: 150px;
-      border: 1px solid white;
+    .next-icon::after{
+      content: "JUMP";
+      text-transform: uppercase;
+      color: transparent;
+      margin-right: -30px;
+      margin-bottom: 10px;
+      font-size: 1em;
+      transition: all .1s ease ;
+    }
+
+    .next-icon:hover{
+      background-image: url(../../public/icons8-long-jump-80-black.png);
+      width: 120px;
+      height: 50px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .next-icon:hover, .next-icon:hover::after {
+      font-size: 1.2em;
+      color: rgb(255, 255, 255);
+      
     }
 
 
