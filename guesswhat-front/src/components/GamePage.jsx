@@ -176,23 +176,32 @@ export default function GamePage() {
       <div className='start-btn-container'>
       
       {currentState === "StartBtn" ?
-      <div className='countdown'>
-        <div className='countdown-circle'>
-          <span className='countdown-span'>3</span>
-          <span className='countdown-span'>2</span>
-          <span className='countdown-span'>1</span>
-          <span className='countdown-span'>GO!</span>
-        </div>
 
-      </div>
-      // <button className='start-btn' onClick={()=>{generateRandomWord(); setPlaying(true); setRunningTimer(true); setSecond(59); setMinute(1); setCounter(0); setCurrentState("Loading") }}>
-        // START
-      // </button>
-      : 
       
-      <>
-      </>
-  }
+      <button className='start-btn' onClick={()=>{generateRandomWord(); setPlaying(true); setRunningTimer(true); setSecond(59); setMinute(1); setCounter(0); setCurrentState("Loading") }}>
+        START
+      </button>
+      :
+      <></>
+    }
+      
+      {currentState === "Loading" ?
+          <div className='countdown'>
+          <div className='countdown-circle'>
+            <span className='countdown-span'>3</span>
+            <span className='countdown-span'>2</span>
+            <span className='countdown-span'>1</span>
+            <span className='countdown-span'>GO!</span>
+          </div>
+        </div>
+        :        
+       <></>
+      }
+
+
+
+
+      
       </div>
       
       <div className='currentWord'> {currentWord} </div>
