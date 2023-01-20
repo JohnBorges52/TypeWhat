@@ -166,24 +166,37 @@ export default function GamePage() {
       const element = document.getElementById("futureHiddenElement")
     }
 
+    
+
+    const startGame = () =>{
+      const element = document.getElementById("future-transparent")
+      element.classList.add("transparency-100");
+
+      setInterval(() =>{
+      setPlaying(true); 
+      setRunningTimer(true); 
+      setSecond(59); 
+      setMinute(1);
+      setCounter(0);
+      setCurrentState("Playing");
+      element.classList.remove("transparency-100"); 
+      },8000)
+    }
+
 
   return (
     <div className='gamepage-container'>
 
     <div className='randomwords-container'>
-
       
       <div className='start-btn-container'>
-      
-      {currentState === "StartBtn" ?
-
-      
-      <button className='start-btn' onClick={()=>{generateRandomWord(); setPlaying(true); setRunningTimer(true); setSecond(59); setMinute(1); setCounter(0); setCurrentState("Loading") }}>
-        START
-      </button>
-      :
-      <></>
-    }
+        {currentState === "StartBtn" ?
+          <button className='start-btn' onClick={()=>{generateRandomWord(); startGame(); setCurrentState("Loading")}}>
+            START
+          </button>
+          :
+          <></>
+        }
       
       {currentState === "Loading" ?
           <div className='countdown'>
@@ -195,16 +208,18 @@ export default function GamePage() {
           </div>
         </div>
         :        
-       <></>
+        <></>
       }
 
 
 
 
-      
+
       </div>
+            
+        <div className='currentWord' id='future-transparent'>  {currentWord} 
       
-      <div className='currentWord'> {currentWord} </div>
+     </div>
       
     </div>
     <div className='bottom-limit'></div>
