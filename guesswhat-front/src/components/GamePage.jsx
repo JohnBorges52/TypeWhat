@@ -4,7 +4,8 @@ import axios from 'axios'
 import { useState, useRef } from 'react'
 import { useEffect } from 'react';
 import $ from 'jquery';
-
+import ProgressBar from 'react-bootstrap/ProgressBar';
+import { color } from '@mui/system';
 
 
 
@@ -16,13 +17,15 @@ export default function GamePage() {
     const[userWord, setUserWord] = useState("");
     const [playing, setPlaying] = useState(false)
     const [counter, setCounter] = useState(0)
-    const [startBtn, setStartBtn] = useState(true)
 
-    const [mileSecond, setMileSecond] = useState(999)
-    const [second, setSecond] = useState(59)
-    const [minute, setMinute] = useState(1)
+    const [currentState, setCurrentState] = useState("StartBtn")
+
+    const [mileSecond, setMileSecond] = useState(0)
+    const [second, setSecond] = useState(0)
+    const [minute, setMinute] = useState(0)
 
     const [runningTimer, setRunningTimer] = useState(false)
+    
 
 
     useEffect(()=>{
@@ -74,6 +77,7 @@ export default function GamePage() {
   }
    
 
+
     useEffect(()=> {
 
       const userWordInput = document.getElementById('input-word');
@@ -85,6 +89,7 @@ export default function GamePage() {
         animateCounter();
         inputRef.current.focus();
         generateRandomWord();
+        
       }
 
     },[userWord])
@@ -106,6 +111,7 @@ export default function GamePage() {
     })
   }
 
+  
     if(runningTimer) {
 
       setTimeout(()=>{
@@ -119,7 +125,7 @@ export default function GamePage() {
       }, 0.9)
       
       setTimeout(()=>{
-        if(playing && mileSecond > 0) {
+        if(playing) {
           setSecond(second-1)
         }
         if(playing && minute > 0 && second === 0){
@@ -169,11 +175,21 @@ export default function GamePage() {
       
       <div className='start-btn-container'>
       
-      {!playing ?
-      <button className='start-btn' onClick={()=>{generateRandomWord(); setPlaying(true); setRunningTimer(true); setMileSecond(999); setSecond(59); setMinute(1); setCounter(0) }}>
-        START
-      </button>
-      :
+      {currentState === "StartBtn" ?
+      <div className='countdown'>
+        <div className='countdown-circle'>
+          <span className='countdown-span'>3</span>
+          <span className='countdown-span'>2</span>
+          <span className='countdown-span'>1</span>
+          <span className='countdown-span'>GO!</span>
+        </div>
+
+      </div>
+      // <button className='start-btn' onClick={()=>{generateRandomWord(); setPlaying(true); setRunningTimer(true); setSecond(59); setMinute(1); setCounter(0); setCurrentState("Loading") }}>
+        // START
+      // </button>
+      : 
+      
       <>
       </>
   }
@@ -188,8 +204,11 @@ export default function GamePage() {
       <div className='timer-container'>
 
       <div className='clock-pic-span'></div>
-      <span className='timer'>{formatTime(minute)} : {formatTime(second)} : {mileSecond}</span>
-      </div>
+      <span className='timer'>{formatTime(minute)} : {formatTime(second)}</span>
+      
+
+    </div>
+      {/* <ProgressBar now={progress} variant={"success"} style={{width: "150px" }} /> */}
 
       <div className='game-information-points'>
 
