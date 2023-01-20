@@ -185,7 +185,11 @@ export default function GamePage() {
     <div className='bottom-limit'></div>
     
     <div className='game-information'>
+      <div className='timer-container'>
+
+      <div className='clock-pic-span'></div>
       <span className='timer'>{formatTime(minute)} : {formatTime(second)} : {mileSecond}</span>
+      </div>
 
       <div className='game-information-points'>
 

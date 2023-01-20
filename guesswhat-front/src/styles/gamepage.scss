@@ -87,12 +87,30 @@
   width: 100vw;
   height: 1px;
 }
-.timer{
-  color: white;
-  font-size: 2em;
+
+.timer-container{
   display: flex;
   justify-content: center;
+  height: 70px;
   align-items: center;
+
+  
+  .timer{
+    color: white;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.clock-pic-span{
+  background-image: url(../../public/45-clock-time-lineal.gif);
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+  background-position: center;
+}
 }
 
 .counter{
@@ -184,7 +202,8 @@
       border-radius: 22px;
       width: 50px;
       height: 40px;
-      transition: all .3s ease ;
+      transition: all .3s ease;
+      cursor: pointer;
       
       
     }
@@ -230,45 +249,7 @@
       background-repeat: no-repeat;
     }
 
-    .stop-icon{
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-end;
-      width: 120px;
-      height: 35px;
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      margin-left: -30px;
-      transition: all .3s ease ;
-
-
-    }
-    .stop-icon::after{
-      content: "stop";
-      text-transform: uppercase;
-      color: transparent;
-      margin-right: -30px;
-      margin-bottom: 10px;
-      font-size: 1em;
-      transition: all .1s ease ;
-    }
-    .stop-icon:hover{
-      width: 120px;
-      height: 40px;
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      animation: vibrate .8s normal;
-      
-
-    }
-    .stop-icon:hover, .stop-icon:hover::after {
-      font-size: 1.2em;
-      color: rgb(255, 255, 255);
-      
-    }
+    
   
   }
 }
