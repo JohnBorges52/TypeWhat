@@ -196,10 +196,17 @@ export default function GamePage() {
         <span className='counter' id='counter-id'> {counter}</span>
         <div className='option-btn-div'>
 
-        <div className='next-icon'></div>
+        <div className='option-btn-container'>
+          <span className='jump-pic-span'></span>
+          <span className='option-btn-text'> JUMP</span>
+          
+        </div>
         
         
-        <div className='stop-icon'></div>
+        <div className='option-btn-container stop-bg'>
+        <span className='stop-pic-span'></span>
+          <span className='option-btn-text'> STOP</span>
+        </div>
 
         </div>
 
