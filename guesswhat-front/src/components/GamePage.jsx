@@ -4,14 +4,15 @@ import axios from 'axios'
 import { useState, useRef } from 'react'
 import { useEffect } from 'react'
 import $ from 'jquery'
-import ProgressBar from 'react-bootstrap/ProgressBar'
-import { color } from '@mui/system'
+import PopUp from './PopUp'
 
 export default function GamePage(props) {
   const [currentWord, setCurrentWord] = useState('')
   const [userWord, setUserWord] = useState('')
   const [playing, setPlaying] = useState(false)
   const [counter, setCounter] = useState(0)
+
+  const [isPopUp, setIsPopUp] = useState(false)
 
   const [currentState, setCurrentState] = useState('StartBtn')
 
@@ -155,6 +156,19 @@ export default function GamePage(props) {
 
   return (
     <div className="gamepage-container">
+      {isPopUp && (
+        <PopUp
+          message={'Do you really want to cancel?'}
+          onConfirm={() => {
+            setIsPopUp(false)
+            setCurrentState('StartBtn')
+            setCurrentWord('')
+          }}
+          onCancel={() => {
+            setIsPopUp(false)
+          }}
+        />
+      )}
       <div className="close-btn-container">
         <span onClick={props.onClose}>X</span>
       </div>
@@ -203,8 +217,6 @@ export default function GamePage(props) {
             {formatTime(minute)} : {formatTime(second)}
           </span>
         </div>
-        {/* <ProgressBar now={progress} variant={"success"} style={{width: "150px" }} /> */}
-
         <div className="game-information-points">
           <span className="points-span" id="animated-pic-id"></span>
 
@@ -212,12 +224,21 @@ export default function GamePage(props) {
             {counter}
           </span>
           <div className="option-btn-div">
-            <div className="option-btn-container">
+            <div
+              className="option-btn-container"
+              onClick={() => {
+                inputRef.current.focus()
+                generateRandomWord()
+              }}
+            >
               <span className="jump-pic-span"></span>
-              <span className="option-btn-text"> JUMP</span>
+              <span className="option-btn-text">JUMP</span>
             </div>
 
-            <div className="option-btn-container stop-bg">
+            <div
+              className="option-btn-container stop-bg"
+              onClick={() => setIsPopUp(true)}
+            >
               <span className="stop-pic-span"></span>
               <span className="option-btn-text"> STOP</span>
             </div>
