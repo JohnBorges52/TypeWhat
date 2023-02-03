@@ -1,21 +1,21 @@
-.bg-home-container{
-    min-height: 100vh;
-    max-width: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    position: relative;
-    background-image: url(../../public/Wave.svg);
-    background-size: 2000px 1000px;
-    background-position: -500px 0;
-    animation: background 40s infinite alternate linear;
+.bg-home-container {
+  min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  background-image: url(../../public/Wave.svg);
+  background-size: 2000px 1000px;
+  background-position: -500px 0;
+  animation: background 40s infinite alternate linear;
 }
 
-.blured-container{
-  transition: .6s;
+.blured-container {
+  transition: 0.6s;
   filter: blur(4px);
 }
 
-.mainpage--container{
+.mainpage--container {
   margin: 5vh auto;
   width: 90%;
   border: 1px solid white;
@@ -27,13 +27,13 @@
   background-size: cover;
 }
 
-.top-bar-container{
+.top-bar-container {
   width: 100%;
   height: 15%;
   display: flex;
   flex-direction: row;
-  
-  .title-container{
+
+  .title-container {
     width: fit-content;
     padding-top: 10px;
     padding-left: 20px;
@@ -42,16 +42,16 @@
     align-items: center;
     gap: 0.5em;
 
-    .fa-feather{
+    .fa-feather {
       color: rgb(255, 255, 255);
     }
 
-    .h1-title-container{
+    .h1-title-container {
       display: flex;
       flex-direction: column;
       align-items: center;
 
-      .title-mainpage{
+      .title-mainpage {
         color: rgb(255, 255, 255);
         text-align: center;
         margin: 0;
@@ -69,32 +69,30 @@
   align-items: center;
   margin-top: 50px;
 
-  .content-container-left{
+  .content-container-left {
     width: 40%;
     height: 80%;
-    min-height: 408px ;
+    min-height: 408px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    
-    .content-container-left-text{
-      span{
+
+    .content-container-left-text {
+      span {
         margin: 0;
         color: rgb(35, 100, 175);
         font-family: 'Montserrat', sans-serif;
         font-weight: 800;
-
       }
-      
-      h3{
+
+      h3 {
         color: white;
         margin: 0;
         font-family: 'Montserrat', sans-serif;
         font-weight: 800;
-
       }
-      
-      h4{
+
+      h4 {
         color: rgb(255, 255, 255);
         font-family: 'Montserrat', sans-serif;
         font-weight: 400;
@@ -102,15 +100,15 @@
       }
     }
 
-    .content-container-left-subtext{   
+    .content-container-left-subtext {
       min-width: 182px;
-      max-height: 190px ;
+      max-height: 190px;
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: 40px;
-    
-      h5 { 
+
+      h5 {
         color: white;
         margin: 0;
         font-size: 1em;
@@ -118,15 +116,15 @@
         font-weight: 300;
       }
     }
-    .content-container-left-subtext-links{
+    .content-container-left-subtext-links {
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: 2.5vw;
       margin-top: 15px;
       margin-bottom: 30px;
-      
-      .a-link-login{
+
+      .a-link-login {
         width: 150px;
         min-width: 100px;
         height: 40px;
@@ -134,153 +132,135 @@
         align-items: center;
         justify-content: center;
         border-radius: 20px;
-        
-
+        cursor: pointer;
       }
 
-      .btn-login{
-        background-image: linear-gradient(to right, rgb(51, 31, 105), rgb(118, 77, 230)) ;
+      .btn-login {
+        background-image: linear-gradient(
+          to right,
+          rgb(51, 31, 105),
+          rgb(118, 77, 230)
+        );
         box-shadow: rgba(0, 0, 0, 0.56) 10px 7px 15px 1px;
         color: rgb(241, 235, 235);
         font-weight: 500;
         cursor: pointer;
 
-
-        &:hover{
-        background-image: linear-gradient(to right, rgb(66, 35, 151), rgb(131, 91, 243)) ;
+        &:hover {
+          background-image: linear-gradient(
+            to right,
+            rgb(66, 35, 151),
+            rgb(131, 91, 243)
+          );
         }
       }
 
-      
-      .btn-register{
+      .btn-register {
         border: 2px solid rgba(255, 145, 0, 0.329);
         color: rgb(241, 235, 235);
         box-shadow: rgba(0, 0, 0, 0.56) 10px 7px 15px 1px;
 
-
-        &:hover{
-        border: 2px solid rgb(255, 145, 0);
-        font-weight: 500;
-        background-image: linear-gradient(to right, rgb(255, 145, 0), rgb(224, 136, 110)) ;
-
-
-
+        &:hover {
+          border: 2px solid rgb(255, 145, 0);
+          font-weight: 500;
+          text-decoration: none;
+          background-image: linear-gradient(
+            to right,
+            rgb(255, 145, 0),
+            rgb(224, 136, 110)
+          );
         }
-
       }
     }
   }
-
-
-  
 }
 
-
-
 @media only screen and (max-width: 800px) {
-
-  .top-bar-container{
+  .top-bar-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
   }
 
-  .title-mainpage-topnav{
-    
-      width: 30%;
+  .title-mainpage-topnav {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    line-height: 33px;
+
+    .hamburguer {
       display: flex;
       justify-content: flex-end;
-      line-height: 33px;
+    }
 
-      .hamburguer{
-        display: flex;
-        justify-content: flex-end;
-       
-
-      }
-
-      .normal-Li{
-        display: none;
-      }
-      .small-Li{
-        font-size: 1.5em;
-        text-align: right;
-        padding-right: 30px ;
-      }
-
-    
+    .normal-Li {
+      display: none;
+    }
+    .small-Li {
+      font-size: 1.5em;
+      text-align: right;
+      padding-right: 30px;
+    }
   }
 
-  .fa-feather{
+  .fa-feather {
     color: white;
     font-size: 3.9em;
   }
-  .title-mainpage{
+  .title-mainpage {
     font-size: 1.3em;
-
   }
 
-  .content-container{
+  .content-container {
     flex-wrap: wrap;
     width: 90%;
     padding-left: 0;
     margin: 0 auto;
 
-   
-    
-      .content-container-left{
-        width: 100%;
-      
-        span {
-          font-size: 3.5em;
-          text-align: center;
-          
-        }
+    .content-container-left {
+      width: 100%;
 
-        h3{
-          font-size: 2.5em;
-        }
-        h4{
-          font-size: 1.8em;
-        }
-      
+      span {
+        font-size: 3.5em;
+        text-align: center;
+      }
+
+      h3 {
+        font-size: 2.5em;
+      }
+      h4 {
+        font-size: 1.8em;
+      }
     }
-    .content-container-left-text{
+    .content-container-left-text {
       padding-top: 30px;
       display: flex;
       justify-content: center;
       flex-direction: column;
       text-align: center;
-    
     }
-
-   }
-
-
+  }
 
   .content-container-left-subtext-links {
     flex-wrap: wrap;
     height: 100px;
-
   }
 
   .content-container-left-subtext {
     display: flex;
     justify-content: center;
     flex-direction: column;
-   
   }
-  .content-container-left-subtext-links{
+  .content-container-left-subtext-links {
     justify-content: center;
-
   }
 
-  .content-container-right{
+  .content-container-right {
     width: 100%;
     height: 45vw;
 
-    .triangle{
+    .triangle {
       margin: 0 auto;
       width: 80%;
       height: 40vw;
@@ -290,25 +270,21 @@
       background-position: center;
       background-size: cover;
     }
-    .triangle-behind{
+    .triangle-behind {
       display: none;
     }
   }
-
 }
 
-
 @media only screen and (min-width: 800px) {
-
-  .title-mainpage-topnav{
+  .title-mainpage-topnav {
     width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     position: relative;
-    
 
-    .title-mainpage-topnav-right{
+    .title-mainpage-topnav-right {
       position: absolute;
       width: 50%;
       min-width: 400px;
@@ -316,33 +292,35 @@
       flex-direction: row;
       justify-content: flex-end;
       border-radius: 30px;
-      border-top-right-radius:  0;
-      border-bottom-right-radius:  0;
-      background-image: linear-gradient(to right, rgb(240, 151, 240), rgb(111, 111, 211)) ;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      background-image: linear-gradient(
+        to right,
+        rgb(240, 151, 240),
+        rgb(111, 111, 211)
+      );
       align-items: center;
       height: 60%;
       gap: 4vw;
       padding-right: 60px;
       box-shadow: rgba(0, 0, 0, 0.56) 10px 7px 15px 1px;
-      
-      .normal-Li{
+
+      .normal-Li {
         list-style: none;
         text-transform: uppercase;
         height: 100%;
         display: flex;
         align-items: center;
         transition: all 0.1s;
-
       }
 
-      li:hover{
+      li:hover {
         font-weight: 500;
         border-top: 2px solid rgb(255, 192, 109);
         border-bottom: 2px solid rgb(255, 192, 109);
-        
       }
 
-      .small-Li{
+      .small-Li {
         display: none;
       }
     }
@@ -350,50 +328,43 @@
       display: none;
       color: white;
     }
-
   }
 
-
-  .fa-feather{
+  .fa-feather {
     color: white;
     font-size: 4em;
   }
 
-  .title-mainpage{
+  .title-mainpage {
     font-size: 1.5em;
-
   }
 
-  .content-container-left-text{
-    
+  .content-container-left-text {
     margin-top: 10px;
-  span {
-    font-size: 4.5em;
-    text-align: center;
-    
+    span {
+      font-size: 4.5em;
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 3.5em;
+    }
+    h4 {
+      font-size: 2.8em;
+    }
   }
 
-  h3{
-    font-size: 3.5em;
-  }
-  h4{
-    font-size: 2.8em;
-
-  }
-  }
-
-  .content-container-right{
+  .content-container-right {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    position:relative;
-    overflow:hidden;
+    position: relative;
+    overflow: hidden;
     margin: 0 auto 40px;
     padding-right: 40px;
-       
   }
-  .triangle{
+  .triangle {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -409,12 +380,8 @@
     // clip-path: url(#clip);
     position: relative;
     z-index: 2;
-    
-    
-    
-  
   }
-  .triangle-behind{
+  .triangle-behind {
     margin-right: 80px;
     margin-bottom: 45px;
     width: 50%;
@@ -427,16 +394,10 @@
     z-index: 1;
     clip-path: url(#clip);
   }
- 
 }
 
-@media only screen and (min-width:1000px) {
-  .content-container-left{
+@media only screen and (min-width: 1000px) {
+  .content-container-left {
     margin-left: 80px;
   }
 }
-
-
-
-
-
