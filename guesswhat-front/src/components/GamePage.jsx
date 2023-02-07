@@ -5,6 +5,8 @@ import { useState, useRef } from 'react'
 import { useEffect } from 'react'
 import $ from 'jquery'
 import PopUp from './PopUp'
+import Countdown from './Countdown'
+import EndGame from './EndGame'
 
 export default function GamePage(props) {
   const [currentWord, setCurrentWord] = useState('')
@@ -97,26 +99,27 @@ export default function GamePage(props) {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (playing) {
-        setSecond(second - 1)
-        console.log(second)
-      }
-      if (playing && minute > 0 && second === 0) {
+      if (playing && minute === 1 && second === 0) {
         setMinute(minute - 1)
-        setSecond(59)
+        setSecond(5)
       }
+      if (playing && minute === 0) {
+        setSecond(second - 1)
+      }
+
       if (playing && minute === 0 && second === 0) {
         setSecond(0)
-        setMileSecond(0)
         setMinute(0)
         setPlaying(false)
+        setCurrentWord('')
+        setCurrentState('GameEnded')
       }
     }, 1000)
 
     // return () => {
     //   clearTimeout(timer)
     // }
-  }, [second])
+  }, [second, minute])
 
   const formatTime = time => {
     return String(time).padStart(2, '0')
@@ -146,7 +149,7 @@ export default function GamePage(props) {
     setTimeout(() => {
       setPlaying(true)
       setRunningTimer(true)
-      setSecond(59)
+      setSecond(0)
       setMinute(1)
       setCounter(0)
       setCurrentState('Playing')
@@ -175,7 +178,7 @@ export default function GamePage(props) {
 
       <div className="randomwords-container">
         <div className="start-btn-container">
-          {currentState === 'StartBtn' ? (
+          {currentState === 'StartBtn' && (
             <button
               className="start-btn"
               onClick={() => {
@@ -186,22 +189,11 @@ export default function GamePage(props) {
             >
               START
             </button>
-          ) : (
-            <></>
           )}
 
-          {currentState === 'Loading' ? (
-            <div className="countdown">
-              <div className="countdown-circle">
-                <span className="countdown-span">3</span>
-                <span className="countdown-span">2</span>
-                <span className="countdown-span">1</span>
-                <span className="countdown-span">GO!</span>
-              </div>
-            </div>
-          ) : (
-            <></>
-          )}
+          {currentState === 'Loading' && <Countdown />}
+
+          {currentState === 'GameEnded' && <EndGame points={counter} />}
         </div>
 
         <div className="currentWord" id="future-transparent">

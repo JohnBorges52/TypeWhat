@@ -1,0 +1,40 @@
+.endgame-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .score-container {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+
+    .title-span {
+      font-size: 0.8em;
+      color: rgb(255, 255, 255);
+    }
+    .points-span-box {
+      font-size: 1em;
+      color: white;
+
+      span {
+        color: rgb(75, 243, 145);
+      }
+    }
+    h2 {
+      font-size: 0.5em;
+      color: rgb(27, 55, 179);
+      span {
+        color: rgb(233, 233, 233);
+        text-decoration: underline;
+        cursor: pointer;
+        &:hover {
+          color: rgb(255, 255, 255);
+        }
+      }
+    }
+  }
+}
