@@ -172,9 +172,13 @@ export default function GamePage(props) {
           }}
         />
       )}
-      <div className="close-btn-container">
-        <span onClick={props.onClose}>×</span>
-      </div>
+      {(currentState === 'Playing' ||
+        currentState === 'GameEnded' ||
+        currentState === 'Loading') && (
+        <div className="close-btn-container">
+          <span onClick={props.onClose}>×</span>
+        </div>
+      )}
 
       <div className="randomwords-container">
         <div className="start-btn-container">
@@ -193,7 +197,16 @@ export default function GamePage(props) {
 
           {currentState === 'Loading' && <Countdown />}
 
-          {currentState === 'GameEnded' && <EndGame points={counter} />}
+          {currentState === 'GameEnded' && (
+            <EndGame
+              points={counter}
+              play={() => {
+                generateRandomWord()
+                startGame()
+                setCurrentState('Loading')
+              }}
+            />
+          )}
         </div>
 
         <div className="currentWord" id="future-transparent">
@@ -202,53 +215,57 @@ export default function GamePage(props) {
       </div>
       <div className="bottom-limit"></div>
 
-      <div className="game-information">
-        <div className="timer-container">
-          <div className="clock-pic-span"></div>
-          <span className="timer">
-            {formatTime(minute)} : {formatTime(second)}
-          </span>
-        </div>
-        <div className="game-information-points">
-          <span className="points-span" id="animated-pic-id"></span>
-
-          <span className="counter" id="counter-id">
-            {counter}
-          </span>
-          <div className="option-btn-div">
-            <div
-              className="option-btn-container"
-              onClick={() => {
-                inputRef.current.focus()
-                generateRandomWord()
-              }}
-            >
-              <span className="jump-pic-span"></span>
-              <span className="option-btn-text">JUMP</span>
+      {(currentState === 'Loading' || currentState === 'Playing') && (
+        <>
+          <div className="game-information">
+            <div className="timer-container">
+              <div className="clock-pic-span"></div>
+              <span className="timer">
+                {formatTime(minute)} : {formatTime(second)}
+              </span>
             </div>
+            <div className="game-information-points">
+              <span className="points-span" id="animated-pic-id"></span>
 
-            <div
-              className="option-btn-container stop-bg"
-              onClick={() => setIsPopUp(true)}
-            >
-              <span className="stop-pic-span"></span>
-              <span className="option-btn-text"> STOP</span>
+              <span className="counter" id="counter-id">
+                {counter}
+              </span>
+              <div className="option-btn-div">
+                <div
+                  className="option-btn-container"
+                  onClick={() => {
+                    inputRef.current.focus()
+                    generateRandomWord()
+                  }}
+                >
+                  <span className="jump-pic-span"></span>
+                  <span className="option-btn-text">JUMP</span>
+                </div>
+
+                <div
+                  className="option-btn-container stop-bg"
+                  onClick={() => setIsPopUp(true)}
+                >
+                  <span className="stop-pic-span"></span>
+                  <span className="option-btn-text"> STOP</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className="typewords-container">
-        <input
-          className="input-words"
-          id="input-word"
-          ref={inputRef}
-          type="text"
-          onChange={e => {
-            setUserWord(e.target.value)
-          }}
-        />
-      </div>
+          <div className="typewords-container">
+            <input
+              className="input-words"
+              id="input-word"
+              ref={inputRef}
+              type="text"
+              onChange={e => {
+                setUserWord(e.target.value)
+              }}
+            />
+          </div>
+        </>
+      )}
     </div>
   )
 }

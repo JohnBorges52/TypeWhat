@@ -10,6 +10,9 @@ export default function EndGame(props) {
         <span className="points-span-box">
           You scored <span>{props.points}</span> points
         </span>
+        <span className="playagain-span" onClick={props.play}>
+          Play Again
+        </span>
 
         <h2>
           You can see your ranking <span> here </span>
