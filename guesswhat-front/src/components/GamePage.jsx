@@ -143,7 +143,7 @@ export default function GamePage(props) {
     const element = document.getElementById('future-transparent')
     element.classList.add('transparency-100')
 
-    setInterval(() => {
+    setTimeout(() => {
       setPlaying(true)
       setRunningTimer(true)
       setSecond(59)
