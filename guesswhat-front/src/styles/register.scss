@@ -6,7 +6,7 @@
   position: relative;
 }
 
-.register-wrapper{
+.register-wrapper {
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -14,7 +14,7 @@
   justify-content: space-evenly;
 }
 
-.pic-register-page{
+.pic-register-page {
   width: 65%;
   height: 100vh;
   background-image: url(../../public/pexels-erik-mclean-7360387.jpg);
@@ -29,13 +29,12 @@
   justify-content: center;
   align-items: center;
 }
-.register-h1{
+.register-h1 {
   color: white;
   margin: auto;
   font-size: 10vw;
   text-align: center;
-  padding-top: 50px;  
-
+  padding-top: 50px;
 }
 
 .register-container {
@@ -50,7 +49,7 @@
   transition: 400ms;
 }
 
-.registration-profile-gif{
+.registration-profile-gif {
   width: 14vw;
   height: 14vw;
   min-width: 205px;
@@ -63,24 +62,25 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.span-title{
+.span-title {
   color: white;
   font-size: 2.5em;
   font-weight: 500;
   text-transform: uppercase;
   margin-bottom: 30px;
-  
 }
 
-
-
-.input-label-container{
+.input-label-container {
   width: 70%;
- position: relative;
- margin: 20px 0;
- display: flex;
- justify-content: center;
+  position: relative;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
 
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .input-label-container label {
@@ -92,8 +92,7 @@
   color: white;
   padding: 0 5px;
   pointer-events: none;
-  transition: .5s;
-  
+  transition: 0.5s;
 }
 
 .input-label-container input {
@@ -106,83 +105,168 @@
   border: 1.2px solid white;
   outline: none;
   border-radius: 5px;
-
 }
 
 .form--input:focus ~ .form--label,
-.form--input:not(:placeholder-shown).form--input:not(:focus) ~.form--label
-{
+.form--input:not(:placeholder-shown).form--input:not(:focus) ~ .form--label {
   top: -1px;
   font-size: 12px;
   background-color: #7835b8;
   border-radius: 10%;
-
 }
 
-
-.form--input:focus{
+.form--input:focus {
   border-color: #dc90ff;
-
 }
 
-
-.register-btn-container{
+.register-btn-container {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.register-btn{
+.register-btn {
   margin-top: 30px;
   width: 70%;
   text-transform: uppercase;
-
 }
 
-.btn-link{
+.btn-link {
   margin-top: 40px;
   cursor: pointer;
   width: 20%;
   min-width: 99px;
-  transition: 0.35s ;
+  transition: 0.35s;
   font-size: 1em;
   letter-spacing: 0.05em;
   position: relative;
   overflow: hidden;
-  border: 1px solid  white;
+  border: 1px solid white;
   transition: transform 0.3s ease, box-shadow 1s ease;
   font-weight: 400;
   z-index: 1;
   color: white;
   border-radius: 7px;
   height: 2em;
-
 }
 
-.btn-link::after{
-  content: "";
+.btn-link::after {
+  content: '';
   width: 250px;
   height: 250px;
   position: absolute;
   top: -100px;
   left: -20px;
-  background-image: linear-gradient(-20deg, #eeeeee 0%, #f58720 50%, #ffae17 100% );
+  background-image: linear-gradient(
+    -20deg,
+    #eeeeee 0%,
+    #f58720 50%,
+    #ffae17 100%
+  );
   z-index: -1;
   transition: transform 0.5s ease;
 }
 
-.btn-link:hover{
-  box-shadow: 1px -1px 15px 0 rgba(207, 201, 201, 0.5), -5px 5px 25px 0 rgba(24, 10, 218, 0.5);
+.btn-link:hover {
+  box-shadow: 1px -1px 15px 0 rgba(207, 201, 201, 0.5),
+    -5px 5px 25px 0 rgba(24, 10, 218, 0.5);
   font-weight: 600;
 }
 
-.btn-link:hover::after{
+.btn-link:hover::after {
   animation: rotate 1.5s linear infinite;
   transform: rotate(220deg);
 }
+.or-span {
+  color: rgb(206, 206, 206);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+// google Button //
+
+.login-with-google-btn {
+  height: 40px;
+  width: 206.22px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  opacity: 0.9;
+  padding: 12px 16px 12px 42px;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25);
+  color: #757575;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMyAxMiAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=);
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 12px 11px;
+
+  &:hover {
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25);
+    opacity: 1;
+  }
+
+  &:active {
+    background-color: #eeeeee;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25),
+      0 0 0 3px #c8dafc;
+  }
+}
+
+.social-btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+//facebook-button //
+.loginBtn--facebook {
+  cursor: pointer;
+  height: 40px;
+  background-color: #4c69ba;
+  background-image: linear-gradient(#4c69ba, #3b55a0);
+  text-shadow: 0 -1px 0 #354c8c;
+  box-sizing: border-box;
+  position: relative;
+  margin: 0.2em;
+  padding: 0 15px 0 46px;
+  border: none;
+  text-align: left;
+  line-height: 34px;
+  white-space: nowrap;
+  border-radius: 0.2em;
+  font-size: 16px;
+  color: #fff;
+}
+.loginBtn--facebook:before {
+  border-right: #364e92 1px solid;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png')
+    6px 6px no-repeat;
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 100%;
+}
+.loginBtn--facebook:hover,
+.loginBtn--facebook:focus {
+  background-color: #5b7bd5;
+  background-image: linear-gradient(#5b7bd5, #4864b1);
+}
 
 @media only screen and (max-width: 800px) {
-
   .register-container {
     width: 100vw;
     height: 50vh;
@@ -191,31 +275,19 @@
     position: absolute;
     border: none;
     z-index: 2;
-  
-  
   }
-  .registration-profile-gif{
+  .registration-profile-gif {
     width: 12vw;
     height: 12vw;
     min-width: 150px;
     min-height: 150px;
   }
-  .pic-register-page{
+  .pic-register-page {
     width: 100%;
     background-size: cover;
   }
 
-.register-h1{
-  display: none;
+  .register-h1 {
+    display: none;
+  }
 }
-
-}
-
-
-
-
-
-
-
-
-

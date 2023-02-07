@@ -4,10 +4,9 @@
   right: 0;
   left: 0;
   bottom: 50%;
-
   margin: auto;
   z-index: 3;
-  height: 75vh;
+  height: 85vh;
   min-width: 250px;
   width: 30vw;
   display: flex;
@@ -91,6 +90,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .forgotPsw {
@@ -100,12 +101,14 @@
   right: 3vw;
   bottom: -3.2vh;
   opacity: 0.5;
+  margin-bottom: 10px;
 
   &:hover {
     opacity: 1;
   }
 }
 .btn-login-registration {
+  opacity: 0.9;
   width: 150px;
   min-width: 100px;
   height: 40px;
@@ -115,23 +118,15 @@
   border-radius: 20px;
   border: none;
   font-family: 'Montserrat', sans-serif;
-  background-image: linear-gradient(
-    to right,
-    rgb(255, 145, 0),
-    rgb(224, 136, 110)
-  );
+  background-color: rgb(250, 151, 21);
   box-shadow: rgba(0, 0, 0, 0.56) 10px 7px 15px 1px;
   color: rgb(255, 255, 255);
   font-weight: 500;
   cursor: pointer;
-  margin-top: 40px;
+  margin-top: 20px;
   font-size: 1em;
 
   &:hover {
-    background-image: linear-gradient(
-      to right,
-      rgb(255, 145, 0),
-      rgb(248, 167, 142)
-    );
+    opacity: 1;
   }
 }

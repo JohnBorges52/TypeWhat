@@ -43,8 +43,15 @@ export default function Login(props) {
 
         <div className="login-btn-container">
           <button className="btn-login-registration" href="/login">
-            {' '}
-            LOGIN{' '}
+            LOGIN
+          </button>
+        </div>
+        <div className="social-btns">
+          <button type="button" class="login-with-google-btn">
+            Log in with Google
+          </button>
+          <button class="loginBtn loginBtn--facebook">
+            Login with Facebook
           </button>
         </div>
       </div>
