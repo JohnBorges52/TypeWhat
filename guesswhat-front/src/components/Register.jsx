@@ -93,9 +93,9 @@ export default function Register() {
             <button type="button" class="login-with-google-btn">
               Login in with Google
             </button>
-            <button class="loginBtn loginBtn--facebook">
+            {/* <button class="loginBtn loginBtn--facebook">
               Login with Facebook
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

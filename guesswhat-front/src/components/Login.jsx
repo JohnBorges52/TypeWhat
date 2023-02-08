@@ -3,18 +3,32 @@ import '../styles/login.scss'
 import '../styles/register.scss'
 import '../styles/mainpage.scss'
 
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import {
+  FacebookAuthProvider,
+  GoogleAuthProvider,
+  signInWithPopup
+} from 'firebase/auth'
 import { auth } from '../utils/firebase'
 
 export default function Login(props) {
   //Sign in with Google
-
   const googleProvider = new GoogleAuthProvider()
-
   const googleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider)
       console.log(result.user)
+      window.location.reload()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  //Sign in with Facebook
+  const fbProvider = new FacebookAuthProvider()
+  const facebookLogin = async () => {
+    try {
+      const result = await signInWithPopup(auth, fbProvider)
+      console.log(result)
       window.location.reload()
     } catch (error) {
       console.log(error)
@@ -71,9 +85,9 @@ export default function Login(props) {
           >
             Log in with Google
           </button>
-          <button class="loginBtn loginBtn--facebook">
+          {/* <button onClick={facebookLogin} class="loginBtn loginBtn--facebook">
             Login with Facebook
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
