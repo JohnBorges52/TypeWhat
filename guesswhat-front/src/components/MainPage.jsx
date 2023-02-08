@@ -8,10 +8,15 @@ import Hamburger from 'hamburger-react'
 import Login from './Login'
 import GamePage from './GamePage'
 
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { auth } from '../utils/firebase'
+
 export default function MainPage() {
   const [isOpen, setOpen] = useState(false)
   const [loginOpen, setLoginOpen] = useState(true)
   const [isGame, setIsGame] = useState(false)
+
+  const [user, loading] = useAuthState(auth)
 
   const addLoginClass = () => {
     let element = document.getElementById('blur-container')
@@ -110,28 +115,45 @@ export default function MainPage() {
                 </h5>
               </div>
               <div className="content-container-left-subtext-links">
-                <span
-                  className="a-link-login btn-login"
-                  onClick={() => {
-                    addLoginClass()
-                    removeDisplayClass()
-                  }}
-                >
-                  Login now
-                </span>
-                <a className="a-link-login btn-register" href="/register">
-                  Register here
-                </a>
-                <span
-                  className="a-link-login btn-register"
-                  href="#"
-                  onClick={() => {
-                    addLoginClass()
-                    setIsGame(true)
-                  }}
-                >
-                  PLAY NOW
-                </span>
+                {!user && (
+                  <>
+                    <span
+                      className="a-link-login btn-login"
+                      onClick={() => {
+                        addLoginClass()
+                        removeDisplayClass()
+                      }}
+                    >
+                      Login now
+                    </span>
+                    <a className="a-link-login btn-register" href="/register">
+                      Register here
+                    </a>
+                  </>
+                )}
+                {user && (
+                  <>
+                    <span
+                      className="a-link-login btn-register"
+                      href="#"
+                      onClick={() => {
+                        addLoginClass()
+                        setIsGame(true)
+                      }}
+                    >
+                      PLAY NOW
+                    </span>
+                    <span
+                      className="a-link-login btn-register"
+                      href="#"
+                      onClick={() => {
+                        auth.signOut()
+                      }}
+                    >
+                      Sign Out
+                    </span>
+                  </>
+                )}
               </div>
             </div>
 

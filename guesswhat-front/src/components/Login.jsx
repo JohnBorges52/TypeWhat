@@ -3,7 +3,24 @@ import '../styles/login.scss'
 import '../styles/register.scss'
 import '../styles/mainpage.scss'
 
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import { auth } from '../utils/firebase'
+
 export default function Login(props) {
+  //Sign in with Google
+
+  const googleProvider = new GoogleAuthProvider()
+
+  const googleLogin = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider)
+      console.log(result.user)
+      window.location.reload()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <div
       className="login-wrapper login-wrapper-display"
@@ -47,7 +64,11 @@ export default function Login(props) {
           </button>
         </div>
         <div className="social-btns">
-          <button type="button" class="login-with-google-btn">
+          <button
+            onClick={googleLogin}
+            type="button"
+            class="login-with-google-btn"
+          >
             Log in with Google
           </button>
           <button class="loginBtn loginBtn--facebook">
