@@ -172,13 +172,10 @@ export default function GamePage(props) {
           }}
         />
       )}
-      {(currentState === 'Playing' ||
-        currentState === 'GameEnded' ||
-        currentState === 'Loading') && (
-        <div className="close-btn-container">
-          <span onClick={props.onClose}>×</span>
-        </div>
-      )}
+
+      <div className="close-btn-container">
+        <span onClick={props.onClose}>×</span>
+      </div>
 
       <div className="randomwords-container">
         <div className="start-btn-container">

@@ -134,7 +134,7 @@ export default function MainPage() {
                 {user && (
                   <>
                     <span
-                      className="a-link-login btn-register"
+                      className="a-link-login btn-login"
                       href="#"
                       onClick={() => {
                         addLoginClass()
