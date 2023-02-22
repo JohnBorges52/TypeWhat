@@ -10,6 +10,7 @@ import GamePage from './GamePage'
 
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from '../utils/firebase'
+import TopNavBar from './TopNavBar'
 
 export default function MainPage() {
   const [isOpen, setOpen] = useState(false)
@@ -56,47 +57,17 @@ export default function MainPage() {
                 <h1 className="title-mainpage">What</h1>
               </div>
             </div>
-            <div className="title-mainpage-topnav">
-              <div className="title-mainpage-topnav-right">
-                <li className="hamburguer">
-                  <Hamburger
-                    toggled={isOpen}
-                    color="#c1fdfa"
-                    toggle={setOpen}
-                  />
-                </li>
-
-                {isOpen && (
-                  <>
-                    <li className="small-Li">
-                      <a href="/play">Play</a>
-                    </li>
-                    <li className="small-Li">
-                      <a href="#">Ranking</a>
-                    </li>
-                    <li className="small-Li">
-                      <a href="#">About</a>
-                    </li>
-                    <li className="small-Li">
-                      <a href="#">another</a>
-                    </li>
-                  </>
-                )}
-
-                <li className="normal-Li">
-                  <a href="/play">Play</a>
-                </li>
-                <li className="normal-Li">
-                  <a href="#">Ranking</a>
-                </li>
-                <li className="normal-Li">
-                  <a href="#">About</a>
-                </li>
-                <li className="normal-Li">
-                  <a href="#">another</a>
-                </li>
-              </div>
-            </div>
+            <TopNavBar
+              loggedIn={user}
+              play={() => {
+                addLoginClass()
+                setIsGame(true)
+              }}
+              login={() => {
+                addLoginClass()
+                removeDisplayClass()
+              }}
+            />
           </div>
 
           <div className="content-container">
