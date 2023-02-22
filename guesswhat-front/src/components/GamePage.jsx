@@ -175,6 +175,7 @@ export default function GamePage(props) {
             setIsPopUp(false)
             setCurrentState('StartBtn')
             setCurrentWord('')
+            setPlaying(false)
           }}
           onCancel={() => {
             setIsPopUp(false)
