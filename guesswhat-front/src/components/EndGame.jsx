@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import '../styles/endgame.scss'
 
 export default function EndGame(props) {
+  const [score, setScore] = useState()
+
+  useEffect(() => {
+    const userInfo = localStorage.getItem('userInfo')
+    if (userInfo) {
+      setScore(JSON.parse(userInfo).score)
+    }
+  }, [])
+
   return (
     <div className="endgame-container">
       <div className="score-container">
@@ -15,7 +24,7 @@ export default function EndGame(props) {
         </span>
 
         <h2>
-          You can see your ranking <span> here </span>
+          Your highest score is <span> {score} </span>
         </h2>
       </div>
     </div>

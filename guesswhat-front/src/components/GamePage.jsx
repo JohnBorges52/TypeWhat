@@ -13,6 +13,7 @@ export default function GamePage(props) {
   const [userWord, setUserWord] = useState('')
   const [playing, setPlaying] = useState(false)
   const [counter, setCounter] = useState(0)
+  const [userInfo, setUserInfo] = useState()
 
   const [isPopUp, setIsPopUp] = useState(false)
 
@@ -25,6 +26,10 @@ export default function GamePage(props) {
   const [runningTimer, setRunningTimer] = useState(false)
 
   useEffect(() => {
+    // const data = localStorage.getItem('userInfo')
+    // if (data) {
+    //   setUserInfo(JSON.parse(data))
+    // }
     animateDiv()
   }, [])
 
@@ -112,6 +117,10 @@ export default function GamePage(props) {
         setMinute(0)
         setPlaying(false)
         setCurrentWord('')
+        let data = localStorage.getItem('userInfo')
+        data = JSON.parse(data)
+        data['score'] = data['score'] > counter ? data['score'] : counter
+        localStorage.setItem('userInfo', JSON.stringify(data))
         setCurrentState('GameEnded')
       }
     }, 1000)

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/login.scss'
 import '../styles/register.scss'
 import '../styles/mainpage.scss'
@@ -11,12 +11,26 @@ import {
 import { auth } from '../utils/firebase'
 
 export default function Login(props) {
+  useEffect(() => {
+    const userInfo = localStorage.getItem('userInfo')
+    if (!userInfo) {
+      localStorage.setItem('userInfo', JSON.stringify({}))
+    }
+  }, [])
+
   //Sign in with Google
   const googleProvider = new GoogleAuthProvider()
   const googleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider)
-      console.log(result.user)
+      localStorage.setItem(
+        'userInfo',
+        JSON.stringify({
+          name: result.user.displayName,
+          email: result.user.email,
+          score: 0
+        })
+      )
       window.location.reload()
     } catch (error) {
       console.log(error)
