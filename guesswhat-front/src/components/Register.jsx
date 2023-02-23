@@ -1,37 +1,57 @@
 import React from 'react'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import '../styles/register.scss'
-import axios from 'axios'
+
+import {
+  GoogleAuthProvider,
+  signInWithPopup,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged
+} from 'firebase/auth'
+import { auth } from '../utils/firebase'
+import PopUp from './PopUp'
 
 export default function Register() {
-  const emailRef = useRef()
-  const passwordRef = useRef()
-  const passwordConfirmationRef = useRef()
+  const [registerEmail, setRegisterEmail] = useState('')
+  const [registerPassword, setRegisterPassword] = useState('')
 
-  const [errorMessage, setErrorMessage] = useState('')
+  const [isPopUpSuccess, setIsPopUpSuccess] = useState(false)
+  const [validation, setValidation] = useState(false)
+  const [errorMessage, setErrorMessage] = useState(false)
 
-  let onSubmit = e => {
-    e.preventDefault()
-    let email = emailRef.current.value
-    let password = passwordRef.current.value
-    let passwordConfirmation = passwordConfirmationRef.current.value
+  const register = async () => {
+    try {
+      const user = await createUserWithEmailAndPassword(
+        auth,
+        registerEmail,
+        registerPassword
+      )
+      if (user) {
+        setTimeout(() => {
+          setIsPopUpSuccess(false)
+        }, 2500)
+        setIsPopUpSuccess(true)
+      }
+    } catch (error) {
+      setErrorMessage(true)
 
-    if (password === passwordConfirmation) {
-      axios
-        .get('/users/registeruser', { params: { email, password } })
-        .then(res => {
-          // if(res){}
-
-          console.log(res)
-        })
-    } else {
-      setErrorMessage('Password does not match')
-      console.log('Password does not match!')
+      if (error.code == 'auth/email-already-in-use') {
+        setValidation('The email address is already in use')
+      } else if (error.code == 'auth/invalid-email') {
+        setValidation('The email address is not valid.')
+      } else if (error.code == 'auth/operation-not-allowed') {
+        setValidation('Operation not allowed.')
+      } else if (error.code == 'auth/weak-password') {
+        setValidation('The password is too weak.')
+      }
     }
   }
 
   return (
     <div className="bg-register-container">
+      {isPopUpSuccess && (
+        <PopUp message={'You successfully created an account.'} />
+      )}
       <div className="register-wrapper">
         <div className="pic-register-page">
           <h1 className="register-h1">REGISTER</h1>
@@ -40,6 +60,9 @@ export default function Register() {
         <div className="register-container">
           <div className="registration-profile-gif"></div>
           <span className="span-title">Sign-Up</span>
+          {errorMessage && (
+            <span className="password-message-span">{validation}</span>
+          )}
 
           <div className="input-label-container">
             <input
@@ -48,7 +71,10 @@ export default function Register() {
               placeholder=" "
               name="email"
               required
-              ref={emailRef}
+              onChange={e => {
+                setRegisterEmail(e.target.value)
+                setErrorMessage(false)
+              }}
             />
             <label className="form--label">E-mail</label>
           </div>
@@ -60,29 +86,18 @@ export default function Register() {
               placeholder=" "
               name="password"
               required
-              ref={passwordRef}
+              onChange={e => {
+                setErrorMessage(false)
+                setRegisterPassword(e.target.value)
+              }}
             />
             <label className="form--label">Password</label>
           </div>
-
-          <div className="input-label-container">
-            <input
-              className="form--input"
-              type="password"
-              placeholder=" "
-              name="password"
-              required
-              ref={passwordConfirmationRef}
-            />
-            <label className="form--label">Confirmation</label>
-          </div>
-
           <div className="register-btn-container">
             <button
               className="btn-login-registration"
-              href="/register"
-              onClick={e => {
-                onSubmit(e)
+              onClick={() => {
+                register()
               }}
             >
               REGISTER
@@ -93,9 +108,6 @@ export default function Register() {
             <button type="button" class="login-with-google-btn">
               Login in with Google
             </button>
-            {/* <button class="loginBtn loginBtn--facebook">
-              Login with Facebook
-            </button> */}
           </div>
         </div>
       </div>

@@ -170,6 +170,7 @@ export default function GamePage(props) {
     <div className="gamepage-container">
       {isPopUp && (
         <PopUp
+          options={true}
           message={'Do you really want to cancel?'}
           onConfirm={() => {
             setIsPopUp(false)
@@ -180,6 +181,8 @@ export default function GamePage(props) {
           onCancel={() => {
             setIsPopUp(false)
           }}
+          confirmMessage={'Yes'}
+          confirmCancel={'Cancel'}
         />
       )}
 

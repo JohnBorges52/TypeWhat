@@ -6,10 +6,12 @@ export default function PopUp(props) {
     <div className="popup-container">
       <span>{props.message}</span>
 
-      <div>
-        <button onClick={props.onConfirm}>Yes</button>
-        <button onClick={props.onCancel}>Cancel</button>
-      </div>
+      {props.options && (
+        <div>
+          <button onClick={props.onConfirm}>{props.confirmMessage}</button>
+          <button onClick={props.onCancel}>{props.confirmCancel}</button>
+        </div>
+      )}
     </div>
   )
 }

@@ -70,6 +70,12 @@
   margin-bottom: 30px;
 }
 
+.password-message-span {
+  color: rgb(241, 66, 43);
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
 .input-label-container {
   width: 70%;
   position: relative;
@@ -289,5 +295,10 @@
 
   .register-h1 {
     display: none;
+  }
+  .password-message-span {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2px;
   }
 }
