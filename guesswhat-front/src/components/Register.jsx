@@ -19,6 +19,7 @@ export default function Register() {
   const [validation, setValidation] = useState(false)
   const [errorMessage, setErrorMessage] = useState(false)
 
+  //Email Register
   const register = async () => {
     try {
       const user = await createUserWithEmailAndPassword(
@@ -29,6 +30,7 @@ export default function Register() {
       if (user) {
         setTimeout(() => {
           setIsPopUpSuccess(false)
+          window.location.assign('/')
         }, 2500)
         setIsPopUpSuccess(true)
       }
@@ -44,6 +46,24 @@ export default function Register() {
       } else if (error.code == 'auth/weak-password') {
         setValidation('The password is too weak.')
       }
+    }
+  }
+  // Google Login
+  const googleProvider = new GoogleAuthProvider()
+  const googleLogin = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider)
+      localStorage.setItem(
+        'userInfo',
+        JSON.stringify({
+          name: result.user.displayName,
+          email: result.user.email,
+          score: 0
+        })
+      )
+      window.location.assign('/')
+    } catch (error) {
+      console.log(error)
     }
   }
 
@@ -105,7 +125,11 @@ export default function Register() {
           </div>
           <span className="or-span">OR</span>
           <div className="social-btns">
-            <button type="button" class="login-with-google-btn">
+            <button
+              type="button"
+              class="login-with-google-btn"
+              onClick={googleLogin}
+            >
               Login in with Google
             </button>
           </div>

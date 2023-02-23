@@ -4,19 +4,48 @@ import '../styles/register.scss'
 import '../styles/mainpage.scss'
 
 import {
-  FacebookAuthProvider,
   GoogleAuthProvider,
+  signInWithEmailAndPassword,
   signInWithPopup
 } from 'firebase/auth'
 import { auth } from '../utils/firebase'
 
 export default function Login(props) {
+  const [loginEmail, setLoginEmail] = useState('')
+  const [loginPassword, setLoginPassword] = useState('')
+
+  const [validation, setValidation] = useState(false)
+  const [errorMessage, setErrorMessage] = useState(false)
+
   useEffect(() => {
     const userInfo = localStorage.getItem('userInfo')
     if (!userInfo) {
       localStorage.setItem('userInfo', JSON.stringify({}))
     }
   }, [])
+
+  //Login with Email
+
+  const emailLogin = async () => {
+    try {
+      const user = await signInWithEmailAndPassword(
+        auth,
+        loginEmail,
+        loginPassword
+      )
+      window.location.reload()
+    } catch (error) {
+      setErrorMessage(true)
+      switch (error.code) {
+        case 'auth/invalid-email':
+        case 'auth/wrong-password':
+        case 'auth/user-not-found': {
+          setValidation('Wrong email address or password.')
+          break
+        }
+      }
+    }
+  }
 
   //Sign in with Google
   const googleProvider = new GoogleAuthProvider()
@@ -37,18 +66,6 @@ export default function Login(props) {
     }
   }
 
-  //Sign in with Facebook
-  const fbProvider = new FacebookAuthProvider()
-  const facebookLogin = async () => {
-    try {
-      const result = await signInWithPopup(auth, fbProvider)
-      console.log(result)
-      window.location.reload()
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
   return (
     <div
       className="login-wrapper login-wrapper-display"
@@ -60,6 +77,9 @@ export default function Login(props) {
         </span>
         <div className="profile-gif"></div>
         <span className="span-title">Login</span>
+        {errorMessage && (
+          <span className="password-message-span">{validation}</span>
+        )}
 
         <div className="input-label-container">
           <input
@@ -68,6 +88,9 @@ export default function Login(props) {
             placeholder=" "
             name="email"
             required
+            onChange={e => {
+              setLoginEmail(e.target.value)
+            }}
           />
           <label className="form--label">E-mail</label>
         </div>
@@ -79,6 +102,9 @@ export default function Login(props) {
             placeholder=" "
             name="password"
             required
+            onChange={e => {
+              setLoginPassword(e.target.value)
+            }}
           />
           <label className="form--label">Password</label>
           <a className="forgotPsw" href="#">
@@ -87,7 +113,12 @@ export default function Login(props) {
         </div>
 
         <div className="login-btn-container">
-          <button className="btn-login-registration" href="/login">
+          <button
+            className="btn-login-registration"
+            onClick={() => {
+              emailLogin()
+            }}
+          >
             LOGIN
           </button>
         </div>
@@ -99,9 +130,6 @@ export default function Login(props) {
           >
             Log in with Google
           </button>
-          {/* <button onClick={facebookLogin} class="loginBtn loginBtn--facebook">
-            Login with Facebook
-          </button> */}
         </div>
       </div>
     </div>
