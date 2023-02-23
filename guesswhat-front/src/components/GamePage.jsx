@@ -1,6 +1,5 @@
 import React from 'react'
 import '../styles/gamepage.scss'
-import axios from 'axios'
 import { useState, useRef } from 'react'
 import { useEffect } from 'react'
 import $ from 'jquery'
@@ -9,17 +8,17 @@ import Countdown from './Countdown'
 import EndGame from './EndGame'
 
 export default function GamePage(props) {
+  var randomWords = require('random-words')
+
   const [currentWord, setCurrentWord] = useState('')
   const [userWord, setUserWord] = useState('')
   const [playing, setPlaying] = useState(false)
   const [counter, setCounter] = useState(0)
-  const [userInfo, setUserInfo] = useState()
 
   const [isPopUp, setIsPopUp] = useState(false)
 
   const [currentState, setCurrentState] = useState('StartBtn')
 
-  const [mileSecond, setMileSecond] = useState(0)
   const [second, setSecond] = useState(0)
   const [minute, setMinute] = useState(0)
 
@@ -91,22 +90,14 @@ export default function GamePage(props) {
   const inputRef = useRef(null)
 
   const generateRandomWord = () => {
-    const url = 'https://api.api-ninjas.com/v1/randomword'
-    axios
-      .get(url, {
-        headers: { 'X-Api-Key': 'Z32yDdS8nvmr8jzg+ypYTQ==zfzLwMaoKnftCKOB' }
-      })
-      .then(res => {
-        setCurrentWord(res.data.word)
-        inputRef.current.focus()
-      })
+    setCurrentWord(randomWords())
   }
 
   useEffect(() => {
     const timer = setTimeout(() => {
       if (playing && minute === 1 && second === 0) {
         setMinute(minute - 1)
-        setSecond(5)
+        setSecond(59)
       }
       if (playing && minute === 0) {
         setSecond(second - 1)
@@ -124,10 +115,6 @@ export default function GamePage(props) {
         setCurrentState('GameEnded')
       }
     }, 1000)
-
-    // return () => {
-    //   clearTimeout(timer)
-    // }
   }, [second, minute])
 
   const formatTime = time => {

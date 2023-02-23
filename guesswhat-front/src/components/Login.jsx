@@ -89,6 +89,7 @@ export default function Login(props) {
             name="email"
             required
             onChange={e => {
+              setErrorMessage(false)
               setLoginEmail(e.target.value)
             }}
           />
@@ -103,6 +104,7 @@ export default function Login(props) {
             name="password"
             required
             onChange={e => {
+              setErrorMessage(false)
               setLoginPassword(e.target.value)
             }}
           />
