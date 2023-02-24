@@ -172,9 +172,9 @@ export default function GamePage(props) {
         />
       )}
 
-      <div className="close-btn-container">
-        <span onClick={props.onClose}>×</span>
-      </div>
+      <span className="close-btn-span" onClick={props.onClose}>
+        ×
+      </span>
 
       <div className="randomwords-container" id="whiteborder">
         <div className="start-btn-container">
