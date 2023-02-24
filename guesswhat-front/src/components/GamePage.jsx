@@ -79,7 +79,6 @@ export default function GamePage(props) {
 
     if (currentWord !== '' && userWord !== '' && currentWord === userWord) {
       userWordInput.value = ''
-      console.log('ACERTOU')
       setCounter(counter + 1)
       animateCounter()
       inputRef.current.focus()
@@ -134,21 +133,20 @@ export default function GamePage(props) {
     }, 1000)
   }
 
-  const hideElement = () => {
-    const element = document.getElementById('futureHiddenElement')
-  }
-
   const startGame = () => {
     const element = document.getElementById('future-transparent')
     element.classList.add('transparency-100')
+    setSecond(0)
+    setMinute(0)
+    setCounter(0)
 
+    setCurrentState('Playing')
     setTimeout(() => {
       setPlaying(true)
       setRunningTimer(true)
-      setSecond(0)
-      setMinute(1)
+      setSecond(5)
+      setMinute(0)
       setCounter(0)
-      setCurrentState('Playing')
       element.classList.remove('transparency-100')
     }, 8000)
   }
@@ -161,9 +159,10 @@ export default function GamePage(props) {
           message={'Do you really want to cancel?'}
           onConfirm={() => {
             setIsPopUp(false)
-            setCurrentState('StartBtn')
+            setCurrentState('GameEnded')
             setCurrentWord('')
             setPlaying(false)
+            document.getElementById('whiteborder').style.border = 'none'
           }}
           onCancel={() => {
             setIsPopUp(false)
@@ -177,7 +176,7 @@ export default function GamePage(props) {
         <span onClick={props.onClose}>×</span>
       </div>
 
-      <div className="randomwords-container">
+      <div className="randomwords-container" id="whiteborder">
         <div className="start-btn-container">
           {currentState === 'StartBtn' && (
             <button
@@ -186,6 +185,8 @@ export default function GamePage(props) {
                 generateRandomWord()
                 startGame()
                 setCurrentState('Loading')
+                document.getElementById('whiteborder').style.border =
+                  '1px solid #ffffff'
               }}
             >
               START
@@ -201,6 +202,8 @@ export default function GamePage(props) {
                 generateRandomWord()
                 startGame()
                 setCurrentState('Loading')
+                document.getElementById('whiteborder').style.border =
+                  '1px solid #ffffff'
               }}
             />
           )}
