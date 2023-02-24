@@ -11,7 +11,7 @@ import {
 import { auth } from '../utils/firebase'
 import PopUp from './PopUp'
 
-export default function Register() {
+export default function Register(props) {
   const [registerEmail, setRegisterEmail] = useState('')
   const [registerPassword, setRegisterPassword] = useState('')
 
@@ -73,6 +73,14 @@ export default function Register() {
         <PopUp message={'You successfully created an account.'} />
       )}
       <div className="register-wrapper">
+        <span
+          className="close-btn-register"
+          onClick={() => {
+            window.location.assign('/')
+          }}
+        >
+          ×
+        </span>
         <div className="pic-register-page">
           <h1 className="register-h1">REGISTER</h1>
         </div>
