@@ -144,7 +144,7 @@ export default function GamePage(props) {
     setTimeout(() => {
       setPlaying(true)
       setRunningTimer(true)
-      setSecond(5)
+      setSecond(55)
       setMinute(0)
       setCounter(0)
       element.classList.remove('transparency-100')
