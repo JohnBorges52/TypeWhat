@@ -80,7 +80,7 @@ export default function GamePage(props) {
     if (currentWord !== '' && userWord !== '' && currentWord === userWord) {
       userWordInput.value = ''
       setCounter(counter + 1)
-      animateCounter()
+      // animateCounter()
       inputRef.current.focus()
       generateRandomWord()
     }
@@ -225,7 +225,7 @@ export default function GamePage(props) {
               </span>
             </div>
             <div className="game-information-points">
-              <span className="points-span" id="animated-pic-id"></span>
+              {/* <span className="points-span" id="animated-pic-id"></span> */}
 
               <span className="counter" id="counter-id">
                 {counter}

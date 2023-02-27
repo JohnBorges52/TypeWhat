@@ -18,6 +18,7 @@
 
   .close-btn-span {
     position: absolute;
+    z-index: 1;
     top: 10px;
     right: 15px;
     background-color: rgba(226, 226, 226, 0.384);
@@ -194,9 +195,11 @@
   border: 1px solid white;
   border-radius: 50%;
   width: 45px;
+  height: 45px;
   background-color: rgba(255, 192, 203, 0.096);
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .counter-animation {
@@ -222,10 +225,11 @@
   display: flex;
   flex-direction: row;
   width: 50%;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   margin: auto;
-  border: 1px solid yellow;
+  border: 1px solid white;
+  border-radius: 5px;
 
   .option-btn-div {
     display: flex;
