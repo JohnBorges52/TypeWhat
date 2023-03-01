@@ -51,7 +51,6 @@ export default function TopNavBar(props) {
               </li>
             </div>
           )}
-
           <li className="normal-Li">
             <a href="#" onClick={props.loggedIn ? props.play : props.login}>
               Play
