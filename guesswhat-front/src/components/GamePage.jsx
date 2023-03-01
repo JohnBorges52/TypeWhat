@@ -25,10 +25,6 @@ export default function GamePage(props) {
   const [runningTimer, setRunningTimer] = useState(false)
 
   useEffect(() => {
-    // const data = localStorage.getItem('userInfo')
-    // if (data) {
-    //   setUserInfo(JSON.parse(data))
-    // }
     animateDiv()
   }, [])
 
@@ -73,6 +69,7 @@ export default function GamePage(props) {
 
     return speed
   }
+  const inputRef = useRef(null)
 
   useEffect(() => {
     const userWordInput = document.getElementById('input-word')
@@ -80,13 +77,10 @@ export default function GamePage(props) {
     if (currentWord !== '' && userWord !== '' && currentWord === userWord) {
       userWordInput.value = ''
       setCounter(counter + 1)
-      // animateCounter()
       inputRef.current.focus()
       generateRandomWord()
     }
   }, [userWord])
-
-  const inputRef = useRef(null)
 
   const generateRandomWord = () => {
     setCurrentWord(randomWords())
@@ -120,19 +114,6 @@ export default function GamePage(props) {
     return String(time).padStart(2, '0')
   }
 
-  const animateCounter = () => {
-    const counterElement = document.getElementById('counter-id')
-    counterElement.classList.add('counter-animation')
-
-    const pictureElement = document.getElementById('animated-pic-id')
-    pictureElement.classList.add('points-span-animated')
-
-    setTimeout(() => {
-      counterElement.classList.remove('counter-animation')
-      pictureElement.classList.remove('points-span-animated')
-    }, 1000)
-  }
-
   const startGame = () => {
     const element = document.getElementById('future-transparent')
     element.classList.add('transparency-100')
@@ -144,7 +125,7 @@ export default function GamePage(props) {
     setTimeout(() => {
       setPlaying(true)
       setRunningTimer(true)
-      setSecond(55)
+      setSecond(30)
       setMinute(0)
       setCounter(0)
       element.classList.remove('transparency-100')
@@ -187,6 +168,7 @@ export default function GamePage(props) {
                 setCurrentState('Loading')
                 document.getElementById('whiteborder').style.border =
                   '1px solid #ffffff'
+                inputRef.focus()
               }}
             >
               START
@@ -225,8 +207,6 @@ export default function GamePage(props) {
               </span>
             </div>
             <div className="game-information-points">
-              {/* <span className="points-span" id="animated-pic-id"></span> */}
-
               <span className="counter" id="counter-id">
                 {counter}
               </span>
@@ -259,6 +239,7 @@ export default function GamePage(props) {
               id="input-word"
               ref={inputRef}
               type="text"
+              placeholder="Type here"
               onChange={e => {
                 setUserWord(e.target.value)
               }}

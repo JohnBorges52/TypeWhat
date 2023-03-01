@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/mainpage.scss'
-
-import { useState } from 'react'
 
 import Login from './Login'
 import GamePage from './GamePage'
@@ -38,6 +36,7 @@ export default function MainPage() {
     setLoginOpen(false)
   }
 
+  //set the login pop up to false everytime the page is reloaded
   useEffect(() => {
     setLoginOpen(false)
   }, [])
@@ -129,7 +128,7 @@ export default function MainPage() {
           </svg>
 
           <div className="content-container-right">
-            <div className="triangle"></div>
+            <div className="image-container"></div>
             <div className="triangle-behind"> </div>
           </div>
         </div>

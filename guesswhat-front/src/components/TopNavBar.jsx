@@ -32,7 +32,22 @@ export default function TopNavBar(props) {
                 </a>
               </li>
               <li className="small-Li">
-                <a href="#">About</a>
+                <a
+                  href="#"
+                  onClick={() => {
+                    alert('This feature will be implemented soon!')
+                  }}
+                >
+                  Ranking
+                </a>
+              </li>
+              <li className="small-Li">
+                <a
+                  href="https://github.com/JohnBorges52/GuessWhat/tree/master/guesswhat-front"
+                  target="_blank"
+                >
+                  About
+                </a>
               </li>
             </div>
           )}
@@ -43,10 +58,22 @@ export default function TopNavBar(props) {
             </a>
           </li>
           <li className="normal-Li">
-            <a href="#">Ranking</a>
+            <a
+              href="#"
+              onClick={() => {
+                alert('This feature will be implemented soon!')
+              }}
+            >
+              Ranking
+            </a>
           </li>
           <li className="normal-Li">
-            <a href="#">About</a>
+            <a
+              href="https://github.com/JohnBorges52/GuessWhat/tree/master/guesswhat-front"
+              target="_blank"
+            >
+              About
+            </a>
           </li>
         </div>
       </div>

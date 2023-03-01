@@ -5,8 +5,7 @@ import '../styles/register.scss'
 import {
   GoogleAuthProvider,
   signInWithPopup,
-  createUserWithEmailAndPassword,
-  onAuthStateChanged
+  createUserWithEmailAndPassword
 } from 'firebase/auth'
 import { auth } from '../utils/firebase'
 import PopUp from './PopUp'
