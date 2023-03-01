@@ -12,6 +12,19 @@
 
 - This project was created to train animations and elements mixing Javascript with CSS as well as to implement FireBase as an authenticator component. Users can log in and maintain their information using email or google account.
 
+!["image showing the Maing Page"](https://github.com/JohnBorges52/GuessWhat/blob/master/guesswhat-front/public/typeWhat.jpg)
+
+
+## How to use
+
+1. First Go to Register Page and create an account using e-mail and password;
+!["Image Showing Register Page"](https://github.com/JohnBorges52/GuessWhat/blob/master/guesswhat-front/public/typeWhatRegisterPage.jpg)<br/>
+1.1 Auternativelly you can use your google account to register/login.
+!["Image showing the login Page](https://github.com/JohnBorges52/GuessWhat/blob/master/guesswhat-front/public/typeWhatLoginPage.jpg)<br />
+2. Start the game by clicking "PlayNow" and then "Start Game".
+3. Wait 3 seconds as the countDown Show and start typing the words as whey appear on the screen".
+
+
 ## The main go was:
 
 - create a game.
