@@ -10,36 +10,29 @@
 
 ## About
 
-- This project was created to train animations and elements mixing Javascript with CSS as well as to implement FireBase as an authenticator component. Users can log in and maintain their information using email or google account.
+- This project was created to train animations and elements by mixing Javascript with CSS and implementing FireBase as an authenticator component. Users can log in and maintain their information using email or a google account.
 
 !["image showing the Maing Page"](https://github.com/JohnBorges52/GuessWhat/blob/master/guesswhat-front/public/typeWhat.jpg)
 
 
 ## How to use
 
-1. First Go to Register Page and create an account using e-mail and password;
+1. First, Go to Register Page and create an account using email and password;
 !["Image Showing Register Page"](https://github.com/JohnBorges52/GuessWhat/blob/master/guesswhat-front/public/typeWhatRegisterPage.jpg)<br/>
-1.1 Auternativelly you can use your google account to register/login.
+1.1 Alternatively, you can use your google account to register/log in.
 !["Image showing the login Page](https://github.com/JohnBorges52/GuessWhat/blob/master/guesswhat-front/public/typeWhatLoginPage.jpg)<br />
-2. Start the game by clicking "PlayNow" and then "Start Game".
-3. Wait 3 seconds as the countDown Show and start typing the words as whey appear on the screen".
+2. Start the game by clicking "PlayNow" and then "Start Game."
+3. Wait 3 seconds as the countdown appears and start typing the words whey appear on the screen".
 
 
 ## The main go was:
 
-- create a game.
-- create point system using react.
-- create and interactive animation to lead users to the next step of the game.
+- create a game with a unique style.
+- create a point system using react.
+- create an interactive animation to lead users to the next step of the game.
 - create user authentication using Firebase.
 
 ## Future Prospects
 
-- I want to create a ranking system where the user information will be storade in a database.
-- I want to create a new game mode where the user can train their aim by clicking elements on the screen.
-
-
-
-
-
-
-
+- I want to create a ranking system where the user information will be stored in a database.
+- I want to create a new game mode where users can train their aim by clicking elements on the screen.
