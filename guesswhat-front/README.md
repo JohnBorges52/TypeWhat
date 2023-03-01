@@ -34,5 +34,5 @@
 
 ## Future Prospects
 
-- I want to create a ranking system where the user information will be stored in a database.
-- I want to create a new game mode where users can train their aim by clicking elements on the screen.
+- Create a ranking system where the user information will be stored in a database.
+- Create a new game mode where users can train their aim by clicking elements on the screen.
