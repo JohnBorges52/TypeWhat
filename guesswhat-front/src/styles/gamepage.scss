@@ -5,7 +5,7 @@
   right: 0;
   left: 0;
   margin: auto;
-  z-index: 3;
+  z-index: 1;
   border-radius: 15px;
   height: 85vh;
   width: 80%;
@@ -15,6 +15,7 @@
   background-image: url(../../public/cool-background.png);
   background-position: center;
   background-size: cover;
+  box-shadow: 1px 1px 20px #292929;
 
   .close-btn-span {
     position: absolute;
@@ -135,7 +136,6 @@
 }
 
 .typewords-container {
-  // border: 1px solid white;
   height: 100px;
   margin: 0 auto;
   width: 50%;
