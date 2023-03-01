@@ -43,7 +43,7 @@ export default function TopNavBar(props) {
               </li>
               <li className="small-Li">
                 <a
-                  href="https://github.com/JohnBorges52/GuessWhat/tree/master/guesswhat-front"
+                  href="https://github.com/JohnBorges52/GuessWhat"
                   target="_blank"
                 >
                   About
@@ -67,10 +67,7 @@ export default function TopNavBar(props) {
             </a>
           </li>
           <li className="normal-Li">
-            <a
-              href="https://github.com/JohnBorges52/GuessWhat/tree/master/guesswhat-front"
-              target="_blank"
-            >
+            <a href="https://github.com/JohnBorges52/GuessWhat" target="_blank">
               About
             </a>
           </li>
