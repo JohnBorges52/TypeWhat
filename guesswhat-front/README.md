@@ -17,7 +17,7 @@
 
 ## How to use
 
-1. First, Go to Register Page and create an account using email and password.<br/>
+1. First, Go to Register Page and create an account using email and password.<br/><br/>
 !["Image Showing Register Page"](https://github.com/JohnBorges52/GuessWhat/blob/master/guesswhat-front/public/typeWhatRegisterPage.jpg)<br/><br/>
 1.1 Alternatively, you can use your google account to register/log in.<br/><br/>
 !["Image showing the login Page](https://github.com/JohnBorges52/GuessWhat/blob/master/guesswhat-front/public/typeWhatLoginPage.jpg)<br/><br/>
