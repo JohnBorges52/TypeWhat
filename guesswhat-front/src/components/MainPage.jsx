@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react'
 import '../styles/mainpage.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFeather } from '@fortawesome/free-solid-svg-icons'
+
 import { useState } from 'react'
 
-import Hamburger from 'hamburger-react'
 import Login from './Login'
 import GamePage from './GamePage'
 
@@ -13,7 +11,6 @@ import { auth } from '../utils/firebase'
 import TopNavBar from './TopNavBar'
 
 export default function MainPage() {
-  const [isOpen, setOpen] = useState(false)
   const [loginOpen, setLoginOpen] = useState(true)
   const [isGame, setIsGame] = useState(false)
 
@@ -47,28 +44,18 @@ export default function MainPage() {
 
   return (
     <>
-      {/* <div className="bg-home-container"> */}
       <div className="mainpage--container" id="blur-container">
-        <div className="top-bar-container">
-          <div className="title-container">
-            <FontAwesomeIcon icon={faFeather} className="fa-feather" />
-            <div className="h1-title-container">
-              <h1 className="title-mainpage">Type</h1>
-              <h1 className="title-mainpage">What</h1>
-            </div>
-          </div>
-          <TopNavBar
-            loggedIn={user}
-            play={() => {
-              addLoginClass()
-              setIsGame(true)
-            }}
-            login={() => {
-              addLoginClass()
-              removeDisplayClass()
-            }}
-          />
-        </div>
+        <TopNavBar
+          loggedIn={user}
+          play={() => {
+            addLoginClass()
+            setIsGame(true)
+          }}
+          login={() => {
+            addLoginClass()
+            removeDisplayClass()
+          }}
+        />
 
         <div className="content-container">
           <div className="content-container-left">
@@ -147,14 +134,6 @@ export default function MainPage() {
           </div>
         </div>
       </div>
-      {/* </div> */}
-      {/* --------------LOGIN---------------------------- */}
-      {/* {loginOpen && 
- <Login 
-  onCloseLogin={()=> {
-  removeLoginClass()
- }}
- />} */}
 
       <Login
         onCloseLogin={() => {
