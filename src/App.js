@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import MainPage from "./components/MainPage";
 import Register from "./components/Register";
-import GamePage from "./components/GamePage";
+import Test from "./components/Test";
 
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/register" element={<Register />} />
 
+          <Route path="/test" element={<Test />} />
 
 
         </Routes>
