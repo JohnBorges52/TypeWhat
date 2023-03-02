@@ -109,7 +109,13 @@ export default function Login(props) {
             }}
           />
           <label className="form--label">Password</label>
-          <a className="forgotPsw" href="#">
+          <a
+            className="forgotPsw"
+            href="#"
+            onClick={() => {
+              alert('This feature will be implemented soon.')
+            }}
+          >
             Forgot Password?
           </a>
         </div>
