@@ -168,7 +168,9 @@ export default function GamePage(props) {
                 setCurrentState('Loading')
                 document.getElementById('whiteborder').style.border =
                   '1px solid #ffffff'
-                inputRef.focus()
+                setTimeout(() => {
+                  inputRef.current.focus()
+                }, 10)
               }}
             >
               START
