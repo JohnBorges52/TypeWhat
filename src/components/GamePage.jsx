@@ -63,7 +63,7 @@ export default function GamePage(props) {
 
     var greatest = x > y ? x : y
 
-    var speedModifier = 0.5
+    var speedModifier = 0.7
 
     var speed = Math.ceil(greatest / speedModifier)
 
@@ -133,122 +133,131 @@ export default function GamePage(props) {
   }
 
   return (
-    <div className="gamepage-container">
-      {isPopUp && (
-        <PopUp
-          options={true}
-          message={'Do you really want to cancel?'}
-          onConfirm={() => {
-            setIsPopUp(false)
-            setCurrentState('GameEnded')
-            setCurrentWord('')
-            setPlaying(false)
-            document.getElementById('whiteborder').style.border = 'none'
-          }}
-          onCancel={() => {
-            setIsPopUp(false)
-          }}
-          confirmMessage={'Yes'}
-          confirmCancel={'Cancel'}
-        />
-      )}
-
-      <span className="close-btn-span" onClick={props.onClose}>
-        ×
-      </span>
-
-      <div className="randomwords-container" id="whiteborder">
-        <div className="start-btn-container">
-          {currentState === 'StartBtn' && (
-            <button
-              className="start-btn"
-              onClick={() => {
-                generateRandomWord()
-                startGame()
-                setCurrentState('Loading')
-                document.getElementById('whiteborder').style.border =
-                  '1px solid #ffffff'
-                setTimeout(() => {
-                  inputRef.current.focus()
-                }, 10)
-              }}
-            >
-              START
-            </button>
-          )}
-
-          {currentState === 'Loading' && <Countdown />}
-
-          {currentState === 'GameEnded' && (
-            <EndGame
-              points={counter}
-              play={() => {
-                generateRandomWord()
-                startGame()
-                setCurrentState('Loading')
-                document.getElementById('whiteborder').style.border =
-                  '1px solid #ffffff'
-              }}
-            />
-          )}
+    <>
+      <div className="gamepage-container">
+        <div className="mobile-block">
+          This game only works on desktop mode.
+          <div className="block-icon"></div>
         </div>
+        {isPopUp && (
+          <PopUp
+            options={true}
+            message={'Do you really want to cancel?'}
+            onConfirm={() => {
+              setIsPopUp(false)
+              setCurrentState('GameEnded')
+              setCurrentWord('')
+              setPlaying(false)
+              document.getElementById('whiteborder').style.border = 'none'
+            }}
+            onCancel={() => {
+              setIsPopUp(false)
+            }}
+            confirmMessage={'Yes'}
+            confirmCancel={'Cancel'}
+          />
+        )}
 
-        <div className="currentWord" id="future-transparent">
-          {currentWord}
-        </div>
-      </div>
-      <div className="bottom-limit"></div>
+        <span className="close-btn-span" onClick={props.onClose}>
+          ×
+        </span>
 
-      {(currentState === 'Loading' || currentState === 'Playing') && (
-        <>
-          <div className="game-information">
-            <div className="timer-container">
-              <div className="clock-pic-span"></div>
-              <span className="timer">
-                {formatTime(minute)} : {formatTime(second)}
-              </span>
-            </div>
-            <div className="game-information-points">
-              <span className="counter" id="counter-id">
-                {counter}
-              </span>
-              <div className="option-btn-div">
-                <div
-                  className="option-btn-container"
-                  onClick={() => {
+        <div className="randomwords-container" id="whiteborder">
+          <div className="start-btn-container">
+            {currentState === 'StartBtn' && (
+              <button
+                className="start-btn"
+                onClick={() => {
+                  generateRandomWord()
+                  startGame()
+                  setCurrentState('Loading')
+                  document.getElementById('whiteborder').style.border =
+                    '1px solid #ffffff'
+                  setTimeout(() => {
                     inputRef.current.focus()
-                    generateRandomWord()
-                  }}
-                >
-                  <span className="jump-pic-span"></span>
-                  <span className="option-btn-text">JUMP</span>
-                </div>
+                  }, 10)
+                }}
+              >
+                START
+              </button>
+            )}
 
-                <div
-                  className="option-btn-container stop-bg"
-                  onClick={() => setIsPopUp(true)}
-                >
-                  <span className="stop-pic-span"></span>
-                  <span className="option-btn-text"> STOP</span>
+            {currentState === 'Loading' && <Countdown />}
+
+            {currentState === 'GameEnded' && (
+              <EndGame
+                points={counter}
+                play={() => {
+                  generateRandomWord()
+                  startGame()
+                  setCurrentState('Loading')
+                  document.getElementById('whiteborder').style.border =
+                    '1px solid #ffffff'
+                  setTimeout(() => {
+                    inputRef.current.focus()
+                  }, 10)
+                }}
+              />
+            )}
+          </div>
+
+          <div className="currentWord" id="future-transparent">
+            {currentWord}
+          </div>
+        </div>
+        <div className="bottom-limit"></div>
+
+        {(currentState === 'Loading' || currentState === 'Playing') && (
+          <>
+            <div className="game-information">
+              <div className="timer-container">
+                <div className="clock-pic-span"></div>
+                <span className="timer">
+                  {formatTime(minute)} : {formatTime(second)}
+                </span>
+              </div>
+              <div className="game-information-points">
+                <span className="counter" id="counter-id">
+                  {counter}
+                </span>
+                <div className="option-btn-div">
+                  <div
+                    className="option-btn-container"
+                    onClick={() => {
+                      inputRef.current.focus()
+                      generateRandomWord()
+                    }}
+                  >
+                    <span className="jump-pic-span"></span>
+                    <span className="option-btn-text">JUMP</span>
+                  </div>
+
+                  <div
+                    className="option-btn-container stop-bg"
+                    onClick={() => setIsPopUp(true)}
+                  >
+                    <span className="stop-pic-span"></span>
+                    <span className="option-btn-text"> STOP</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="typewords-container">
-            <input
-              className="input-words"
-              id="input-word"
-              ref={inputRef}
-              type="text"
-              placeholder="Type here"
-              onChange={e => {
-                setUserWord(e.target.value)
-              }}
-            />
-          </div>
-        </>
-      )}
-    </div>
+            <div className="typewords-container">
+              <input
+                className="input-words"
+                id="input-word"
+                ref={inputRef}
+                type="text"
+                placeholder="Type here"
+                onChange={e => {
+                  setUserWord(e.target.value)
+                }}
+              />
+            </div>
+          </>
+        )}
+      </div>
+    </>
   )
 }

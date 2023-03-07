@@ -6,6 +6,8 @@ import $ from 'jquery'
 export default function Test() {
   const [score, setScore] = useState(0)
 
+  let theScore = 0
+
   const create = () => {
     const box = document.getElementById('bordaid')
     const target = document.createElement('div')
@@ -23,6 +25,7 @@ export default function Test() {
     target.onclick = function () {
       $(this).remove()
       create()
+      setScore(score + 1)
     }
 
     box.appendChild(target)
@@ -32,7 +35,7 @@ export default function Test() {
 
   return (
     <div className="quadradao">
-      <span className="clickhere">{score}</span>
+      <span className="clickhere">{theScore}</span>
       <div className="borda" id="bordaid">
         <div
           className="start-div"

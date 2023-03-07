@@ -16,6 +16,7 @@
   background-position: center;
   background-size: cover;
   box-shadow: 1px 1px 20px #292929;
+  overflow: hidden;
 
   .close-btn-span {
     position: absolute;
@@ -289,6 +290,41 @@
   text-transform: uppercase;
   &::placeholder {
     color: rgba(255, 255, 255, 0.123);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .mobile-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    background-color: rgb(219, 235, 248);
+    font-size: 1.3em;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 5;
+    color: #292929;
+    font-weight: 100;
+
+    .block-icon {
+      width: 50px;
+      height: 50px;
+      background-image: url(../../public/icons8-lightweight-50.png);
+    }
+  }
+}
+@media only screen and (min-width: 800px) {
+  .mobile-block {
+    display: none;
   }
 }
 
