@@ -83,7 +83,7 @@ export default function MainPage() {
                   >
                     Login now
                   </span>
-                  <a className="a-link-login btn-register" href="/register">
+                  <a className="a-link-login btn-register" href="register">
                     Register here
                   </a>
                 </>
