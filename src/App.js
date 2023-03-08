@@ -9,17 +9,13 @@ import Test from "./components/Test";
 function App() {
   return (
     <div className="App">
-      <div className='main-container'>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/test" element={<Test />} />
 
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/register" element={<Register />} />
+      </Routes>
 
-          <Route path="/test" element={<Test />} />
-
-
-        </Routes>
-      </div>
     </div >
   );
 }
