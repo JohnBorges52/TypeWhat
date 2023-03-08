@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 
 import MainPage from "./components/MainPage";
@@ -7,6 +7,7 @@ import Test from "./components/Test";
 
 
 function App() {
+  let navigate = useNavigate();
   return (
     <div className="App">
       <Routes>
