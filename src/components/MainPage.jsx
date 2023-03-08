@@ -65,10 +65,7 @@ export default function MainPage() {
             </div>
             <div className="content-container-left-subtext">
               <h5>
-                Test yor habilities to see how many words you can type in one
-                minute and climb your way to the top of players. You will need
-                to test your typing habilities as well as your vision in order
-                to see the words moving.
+                Test your abilities to see how many words you can type in one minute and climb your way to the top of players. You will need to test your typing skills as well as your vision in order to see the words moving.
               </h5>
             </div>
             <div className="content-container-left-subtext-links">
